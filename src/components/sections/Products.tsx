@@ -1,36 +1,7 @@
+import Link from 'next/link';
+import { PRODUCT_CATEGORIES } from '@/lib/constants';
+
 export default function Products() {
-  const categories = [
-    {
-      name: 'Breads',
-      description: 'Freshly baked artisan breads',
-      icon: '🍞',
-      items: ['Sourdough', 'Whole Wheat', 'French Baguette', 'Multigrain'],
-    },
-    {
-      name: 'Pastries',
-      description: 'Delicious sweet and savory pastries',
-      icon: '🥐',
-      items: ['Croissants', 'Danish', 'Puff Pastry', 'Eclairs'],
-    },
-    {
-      name: 'Cakes',
-      description: 'Custom cakes for every occasion',
-      icon: '🎂',
-      items: ['Birthday Cakes', 'Wedding Cakes', 'Cupcakes', 'Cheesecakes'],
-    },
-    {
-      name: 'Sweets',
-      description: 'Delightful sweet treats',
-      icon: '🍬',
-      items: ['Cookies', 'Brownies', 'Macarons', 'Donuts'],
-    },
-    {
-      name: 'Drinks',
-      description: 'Refreshing beverages',
-      icon: '☕',
-      items: ['Coffee', 'Tea', 'Fresh Juice', 'Smoothies'],
-    },
-  ];
 
   return (
     <section id="products" className="py-20 bg-white">
@@ -44,7 +15,7 @@ export default function Products() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
-          {categories.map((category, index) => (
+          {PRODUCT_CATEGORIES.map((category, index) => (
             <div
               key={index}
               className="bg-linear-to-br from-white to-amber-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-amber-200 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
@@ -65,9 +36,11 @@ export default function Products() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors shadow-lg">
-            View Full Menu
-          </button>
+          <Link href="/products">
+            <button className="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors shadow-lg">
+              View Full Menu
+            </button>
+          </Link>
         </div>
       </div>
     </section>

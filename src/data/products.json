@@ -1,0 +1,255 @@
+{
+  "bread": [
+    {
+      "name": "Bread Large",
+      "description": "Soft large loaf for daily use",
+      "price": 130,
+      "rating": 4.5,
+      "image": "/assets/images/bread_large.jpg"
+    },
+    {
+      "name": "Bread Small",
+      "description": "Small loaf ideal for breakfast",
+      "price": 100,
+      "rating": 4.4,
+      "image": "/assets/images/bread_small.jpg"
+    },
+    {
+      "name": "Slice Bread Small",
+      "description": "Small sliced bread perfect for toast",
+      "price": 200,
+      "rating": 4.3,
+      "image": "/assets/images/slice_bread_small.jpg"
+    },
+    {
+      "name": "Slice Bread Large",
+      "description": "Large pack of sliced bread",
+      "price": 400,
+      "rating": 4.5,
+      "image": "/assets/images/slice_bread_large.jpg"
+    },
+    {
+      "name": "Normal Slice",
+      "description": "Soft sliced bread for sandwiches",
+      "price": 155,
+      "rating": 4.2,
+      "image": "/assets/images/normal_slice.jpg"
+    },
+    {
+      "name": "Roast Bread",
+      "description": "Crispy roasted bread for snacking",
+      "price": 40,
+      "rating": 4.1,
+      "image": "/assets/images/roast_bread.jpg"
+    }
+  ],
+
+
+    "pastries": [
+    {
+      "name": "Buns",
+      "description": "Soft bun for everyday snacking",
+      "price": 60,
+      "rating": 4.3,
+      "image": "/assets/images/buns.jpg"
+    },
+    {
+      "name": "Fish Bun Small",
+      "description": "Small fish-filled bun snack",
+      "price": 60,
+      "rating": 4.5,
+      "image": "/assets/images/fish_bun_small.jpg"
+    },
+    {
+      "name": "Fish Bun Large",
+      "description": "Large bun with fish filling",
+      "price": 80,
+      "rating": 4.6,
+      "image": "/assets/images/fish_bun_large.jpg"
+    },
+    {
+      "name": "Seeni Sambol Bun",
+      "description": "Sweet and spicy sambol bun",
+      "price": 70,
+      "rating": 4.5,
+      "image": "/assets/images/seeni_sambol_bun.jpg"
+    },
+    {
+      "name": "Sausage Bun Small",
+      "description": "Small bun with sausage filling",
+      "price": 70,
+      "rating": 4.4,
+      "image": "/assets/images/sausage_bun_small.jpg"
+    },
+    {
+      "name": "Sausage Bun Large",
+      "description": "Large bun stuffed with sausage",
+      "price": 120,
+      "rating": 4.5,
+      "image": "/assets/images/sausage_bun_large.jpg"
+    },
+    {
+      "name": "Egg Bun",
+      "description": "Bun filled with boiled egg",
+      "price": 100,
+      "rating": 4.4,
+      "image": "/assets/images/egg_bun.jpg"
+    },
+    {
+      "name": "Ham Burger",
+      "description": "Soft burger with ham patty",
+      "price": 120,
+      "rating": 4.6,
+      "image": "/assets/images/ham_burger.jpg"
+    },
+    {
+      "name": "Chicken Burger",
+      "description": "Crispy chicken burger with sauce",
+      "price": 170,
+      "rating": 4.7,
+      "image": "/assets/images/chicken_burger.jpg"
+    },
+    {
+      "name": "Bullseye",
+      "description": "Egg baked inside soft bun",
+      "price": 120,
+      "rating": 4.3,
+      "image": "/assets/images/bullseye.jpg"
+    },
+    {
+      "name": "Drumstick Bun",
+      "description": "Bun shaped like drumstick",
+      "price": 100,
+      "rating": 4.2,
+      "image": "/assets/images/drumstick_bun.jpg"
+    },
+    {
+      "name": "Omlet Bun",
+      "description": "Bun filled with tasty omelette",
+      "price": 100,
+      "rating": 4.3,
+      "image": "/assets/images/omlet_bun.jpg"
+    },
+    {
+      "name": "Meatball Bun",
+      "description": "Bun stuffed with meatballs",
+      "price": 120,
+      "rating": 4.4,
+      "image": "/assets/images/meatball_bun.jpg"
+    },
+    {
+      "name": "Mushroom Bun",
+      "description": "Bun filled with mushrooms",
+      "price": 100,
+      "rating": 4.2,
+      "image": "/assets/images/mushroom_bun.jpg"
+    },
+    {
+      "name": "Prawn Bun",
+      "description": "Soft bun with prawn filling",
+      "price": 120,
+      "rating": 4.5,
+      "image": "/assets/images/prawn_bun.jpg"
+    },
+    {
+      "name": "Salmon Bun",
+      "description": "Bun filled with salmon mix",
+      "price": 100,
+      "rating": 4.4,
+      "image": "/assets/images/salmon_bun.jpg"
+    },
+    {
+      "name": "Chicken Bun",
+      "description": "Soft bun stuffed with chicken",
+      "price": 140,
+      "rating": 4.6,
+      "image": "/assets/images/chicken_bun.jpg"
+    },
+
+    { "name": "Fish Patties", "description": "Crispy pastry filled with fish", "price": 90, "rating": 4.6, "image": "/assets/images/fish_patties.jpg" },
+    { "name": "Chicken Patties", "description": "Golden pastry with chicken filling", "price": 130, "rating": 4.7, "image": "/assets/images/chicken_patties.jpg" },
+    { "name": "Veg Patties", "description": "Vegetable-filled crispy patties", "price": 90, "rating": 4.4, "image": "/assets/images/veg_patties.jpg" },
+
+    { "name": "Fish Cutlet", "description": "Round deep-fried fish snack", "price": 60, "rating": 4.5, "image": "/assets/images/fish_cutlet.jpg" },
+    { "name": "Veg Cutlet", "description": "Crispy vegetable cutlet snack", "price": 60, "rating": 4.3, "image": "/assets/images/veg_cutlet.jpg" },
+
+    { "name": "Cheese Sandwich", "description": "Simple creamy cheese sandwich", "price": 130, "rating": 4.6, "image": "/assets/images/cheese_sandwich.jpg" },
+    { "name": "Fish Sandwich", "description": "Soft sandwich with fish filling", "price": 70, "rating": 4.4, "image": "/assets/images/fish_sandwich.jpg" },
+    { "name": "Egg Sandwich", "description": "Light sandwich with egg filling", "price": 70, "rating": 4.3, "image": "/assets/images/egg_sandwich.jpg" },
+    { "name": "Veg Sandwich", "description": "Fresh vegetable sandwich snack", "price": 70, "rating": 4.2, "image": "/assets/images/veg_sandwich.jpg" },
+    { "name": "Club Sandwich", "description": "Layered club sandwich snack", "price": 240, "rating": 4.7, "image": "/assets/images/club_sandwich.jpg" },
+    { "name": "Chicken Sandwich", "description": "Soft sandwich with chicken mix", "price": 130, "rating": 4.6, "image": "/assets/images/chicken_sandwich.jpg" },
+
+    { "name": "Pizza Slice", "description": "Mini cheesy pizza slice", "price": 100, "rating": 4.5, "image": "/assets/images/pizza_slice.jpg" },
+    { "name": "Fish Pastry", "description": "Flaky pastry with fish filling", "price": 90, "rating": 4.5, "image": "/assets/images/fish_pastry.jpg" },
+    { "name": "Chicken Pastry", "description": "Crispy pastry with chicken filling", "price": 140, "rating": 4.7, "image": "/assets/images/chicken_pastry.jpg" },
+    { "name": "Veg Pastry", "description": "Pastry filled with vegetables", "price": 90, "rating": 4.4, "image": "/assets/images/veg_pastry.jpg" },
+    { "name": "Half Pastry", "description": "Half-sized snack pastry", "price": 45, "rating": 4.1, "image": "/assets/images/half_pastry.jpg" },
+
+    { "name": "Fish Roll", "description": "Deep-fried roll with fish", "price": 80, "rating": 4.5, "image": "/assets/images/fish_roll.jpg" },
+    { "name": "Egg Roll", "description": "Roll filled with egg mixture", "price": 100, "rating": 4.3, "image": "/assets/images/egg_roll.jpg" },
+    { "name": "Chicken Roll", "description": "Crispy roll with chicken filling", "price": 120, "rating": 4.6, "image": "/assets/images/chicken_roll.jpg" },
+    { "name": "Veggie Roll", "description": "Roll stuffed with vegetables", "price": 80, "rating": 4.2, "image": "/assets/images/veggie_roll.jpg" },
+    { "name": "Spring Roll", "description": "Crispy roll with veggie filling", "price": 100, "rating": 4.4, "image": "/assets/images/spring_roll.jpg" },
+
+    { "name": "Macaroni Small", "description": "Small portion of macaroni", "price": 20, "rating": 4.0, "image": "/assets/images/macaroni_small.jpg" },
+    { "name": "Macaroni Large", "description": "Large portion of macaroni", "price": 60, "rating": 4.2, "image": "/assets/images/macaroni_large.jpg" }
+  ],
+
+    "cakes": [
+    { "name": "Cake Piece Small", "description": "Small slice of soft cake", "price": 150, "rating": 4.6, "image": "/assets/images/cake_piece_small.jpg" },
+    { "name": "Cake Piece Thick", "description": "Thick slice of fresh cake", "price": 170, "rating": 4.7, "image": "/assets/images/cake_piece_thick.jpg" },
+    { "name": "Swissroll Piece", "description": "Single piece of swiss roll", "price": 170, "rating": 4.6, "image": "/assets/images/swissroll_piece.jpg" },
+    { "name": "Swissroll Large", "description": "Large whole swiss roll cake", "price": 600, "rating": 4.7, "image": "/assets/images/swissroll_large.jpg" },
+
+    { "name": "Doughnut", "description": "Soft round doughnut treat", "price": 120, "rating": 4.5, "image": "/assets/images/doughnut.jpg" },
+    { "name": "Éclair", "description": "Cream-filled chocolate éclair", "price": 120, "rating": 4.6, "image": "/assets/images/eclair.jpg" },
+    { "name": "Cupcake", "description": "Soft cupcake with topping", "price": 120, "rating": 4.4, "image": "/assets/images/cupcake.jpg" },
+    { "name": "Rum Ball", "description": "Chocolate rum-flavoured ball", "price": 80, "rating": 4.5, "image": "/assets/images/rum_ball.jpg" },
+    { "name": "Apple Cake", "description": "Soft cake baked with apples", "price": 80, "rating": 4.3, "image": "/assets/images/apple_cake.jpg" },
+    { "name": "Ada", "description": "Traditional Sri Lankan sweet", "price": 80, "rating": 4.2, "image": "/assets/images/ada.jpg" },
+    { "name": "Rock Cake", "description": "Crunchy textured sweet cake", "price": 80, "rating": 4.3, "image": "/assets/images/rock_cake.jpg" },
+
+    { "name": "Butter Cake 1kg", "description": "One kilo soft butter cake", "price": 1200, "rating": 4.8, "image": "/assets/images/butter_cake_1kg.jpg" },
+    { "name": "Ribbon Cake 1kg", "description": "Colorful ribbon layer cake", "price": 1300, "rating": 4.8, "image": "/assets/images/ribbon_cake_1kg.jpg" },
+    { "name": "Chocolate Cake 1kg", "description": "Rich chocolate flavored cake", "price": 2000, "rating": 4.9, "image": "/assets/images/chocolate_cake_1kg.jpg" },
+    { "name": "Icing Cake 500g", "description": "Half kilo icing cake", "price": 1600, "rating": 4.7, "image": "/assets/images/icing_cake_500g.jpg" },
+    { "name": "Icing Cake 1kg", "description": "One kilo icing decorated cake", "price": 2600, "rating": 4.8, "image": "/assets/images/icing_cake_1kg.jpg" },
+    { "name": "Birthday Cake", "description": "Custom decorated birthday cake", "price": 0, "rating": 4.9, "image": "/assets/images/birthday_cake.jpg" }
+  ],
+
+
+    "drinks": [
+    { "name": "Ice Coffee NB", "description": "Chilled strong iced coffee", "price": 190, "rating": 4.6, "image": "/assets/images/ice_coffee_nb.jpg" },
+    { "name": "Nestea", "description": "Refreshing iced tea drink", "price": 120, "rating": 4.4, "image": "/assets/images/nestea.jpg" },
+    { "name": "Nescafe", "description": "Hot instant coffee cup", "price": 100, "rating": 4.3, "image": "/assets/images/nescafe.jpg" },
+    { "name": "Plain Tea", "description": "Simple hot black tea", "price": 50, "rating": 4.2, "image": "/assets/images/plain_tea.jpg" },
+
+    { "name": "Drinks 100", "description": "Bottled drink priced at 100", "price": 100, "rating": 4.2, "image": "/assets/images/drinks_100.jpg" },
+    { "name": "Drinks 120", "description": "Assorted drink medium size", "price": 120, "rating": 4.3, "image": "/assets/images/drinks_120.jpg" },
+    { "name": "Drinks 200", "description": "Soft drink priced at 200", "price": 200, "rating": 4.3, "image": "/assets/images/drinks_200.jpg" },
+    { "name": "Drinks 300", "description": "Large bottle priced 300", "price": 300, "rating": 4.4, "image": "/assets/images/drinks_300.jpg" },
+    { "name": "Drinks 400", "description": "Extra large drink bottle", "price": 400, "rating": 4.4, "image": "/assets/images/drinks_400.jpg" },
+
+    { "name": "Milo Large", "description": "Large hot milo drink", "price": 130, "rating": 4.5, "image": "/assets/images/milo_large.jpg" },
+    { "name": "Milo Small", "description": "Small serving milo drink", "price": 100, "rating": 4.4, "image": "/assets/images/milo_small.jpg" },
+    { "name": "Daily", "description": "Refreshing dairy-based drink", "price": 130, "rating": 4.3, "image": "/assets/images/daily.jpg" },
+    { "name": "Lucky", "description": "Creamy milk drink bottle", "price": 220, "rating": 4.4, "image": "/assets/images/lucky.jpg" },
+    { "name": "Highland", "description": "Highland brand milk drink", "price": 220, "rating": 4.4, "image": "/assets/images/highland.jpg" },
+
+    { "name": "Smak Large", "description": "Large Smak fruit drink", "price": 320, "rating": 4.4, "image": "/assets/images/smak_large.jpg" },
+    { "name": "Smak Small", "description": "Small Smak drink pack", "price": 140, "rating": 4.3, "image": "/assets/images/smak_small.jpg" },
+
+    { "name": "Ambewela Milk", "description": "Fresh Ambewela milk", "price": 90, "rating": 4.6, "image": "/assets/images/ambewela_milk.jpg" },
+    { "name": "Ambewela Yoghurt", "description": "Creamy Ambewela yoghurt", "price": 70, "rating": 4.6, "image": "/assets/images/ambewela_yoghurt.jpg" },
+
+    { "name": "Kothmale Milk", "description": "Creamy Kothmale milk pack", "price": 100, "rating": 4.5, "image": "/assets/images/kothmale_milk.jpg" },
+    { "name": "RichLife Milk", "description": "Fresh RichLife milk packet", "price": 140, "rating": 4.4, "image": "/assets/images/richlife_milk.jpg" },
+    { "name": "RichLife Yoghurt", "description": "Creamy RichLife yoghurt cup", "price": 70, "rating": 4.5, "image": "/assets/images/richlife_yoghurt.jpg" },
+    { "name": "Yoghurt Drink", "description": "Refreshing drinkable yoghurt", "price": 120, "rating": 4.5, "image": "/assets/images/yoghurt_drink.jpg" },
+
+    { "name": "Sun Crush", "description": "Fruity Sun Crush beverage", "price": 150, "rating": 4.3, "image": "/assets/images/sun_crush.jpg" },
+    { "name": "E.H. Can", "description": "Energy drink can", "price": 150, "rating": 4.4, "image": "/assets/images/eh_can.jpg" }
+  ]
+}
+
