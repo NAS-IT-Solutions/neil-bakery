@@ -1,3 +1,5 @@
+import { CONTACT_INFO } from '@/lib/constants';
+
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-white">
@@ -22,53 +24,28 @@ export default function Contact() {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center text-white text-xl shrink-0">
-                  📍
+              {CONTACT_INFO.map((info, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center text-white text-xl shrink-0">
+                    {info.icon}
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-bold text-black mb-1">{info.title}</h4>
+                    <div className="text-gray-700">
+                      {Array.isArray(info.content) ? (
+                        info.content.map((line, idx) => (
+                          <p key={idx}>
+                            {line}
+                            {idx < info.content.length - 1 && <br />}
+                          </p>
+                        ))
+                      ) : (
+                        <p>{info.content}</p>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-black mb-1">Address</h4>
-                  <p className="text-gray-700">
-                    123 Bakery Street, Downtown
-                    <br />
-                    City, State 12345
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center text-white text-xl shrink-0">
-                  📞
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-black mb-1">Phone</h4>
-                  <p className="text-gray-700">+1 (555) 123-4567</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center text-white text-xl shrink-0">
-                  ✉️
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-black mb-1">Email</h4>
-                  <p className="text-gray-700">info@neilsbakery.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center text-white text-xl shrink-0">
-                  🕒
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-black mb-1">Business Hours</h4>
-                  <p className="text-gray-700">
-                    Monday - Saturday: 7:00 AM - 8:00 PM
-                    <br />
-                    Sunday: 8:00 AM - 6:00 PM
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 

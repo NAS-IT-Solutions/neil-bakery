@@ -1,27 +1,16 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import { NAV_ITEMS, COMPANY_INFO } from '@/lib/constants';
+import { scrollToSection } from '@/lib/utils';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    setIsMenuOpen(false);
   };
-
-  const navItems = [
-    { name: 'Home', id: 'home' },
-    { name: 'About Us', id: 'about' },
-    { name: 'Outlets', id: 'outlets' },
-    { name: 'Products', id: 'products' },
-    { name: 'Feedback', id: 'feedback' },
-    { name: 'Contact Us', id: 'contact' },
-  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b-2 border-amber-500">
@@ -30,19 +19,20 @@ export default function Navbar() {
           {/* Logo */}
           <div className="shrink-0">
             <button
-              onClick={() => scrollToSection('home')}
+              onClick={() => handleNavClick('home')}
               className="text-2xl font-bold text-black hover:text-amber-600 transition-colors"
+              aria-label="Go to home"
             >
-              Neil's <span className="text-amber-600">Bakery</span>
+              {COMPANY_INFO.name.split("'")[0]}'s <span className="text-amber-600">Bakery</span>
             </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className="text-black hover:text-amber-600 transition-colors font-medium text-base tracking-wide"
               >
                 {item.name}
@@ -80,10 +70,10 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-amber-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className="block w-full text-left px-3 py-2 text-black hover:text-amber-600 hover:bg-amber-50 transition-colors font-medium"
               >
                 {item.name}
