@@ -1,32 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Neil's Bakery 🥐
 
-## Getting Started
+A modern, responsive website for Neil's Bakery showcasing fresh baked goods, outlet locations, customer feedback, and contact information. Built with Next.js and deployed on Firebase Hosting.
 
-First, run the development server:
+## Features
+
+- 🏠 Home page with hero section and product showcase
+- 🍞 Full product menu with categories (Breads, Pastries, Cakes, Drinks)
+- 📍 Outlet locations
+- ⭐ Customer feedback section
+- 📧 Contact information
+- 📱 Fully responsive design
+
+## Tech Stack
+
+- **Framework:** Next.js 16
+- **Styling:** Tailwind CSS 4
+- **Language:** TypeScript
+- **Deployment:** Firebase Hosting with CI/CD
+
+## Setup Instructions
+
+### 1. Clone the Repository
 
 ```bash
-
-yarn dev
-
+git clone https://github.com/NAS-IT-Solutions/neil-bakery.git
+cd neil-bakery
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Configure Environment Variables
 
-## Learn More
+Create a `.env.local` file in the root directory:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp .env.example .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then edit `.env.local` and add your environment variables (e.g., Google Maps API key).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run Development Server
 
-## Deploy on Vercel
+```bash
+yarn dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Available Scripts
+
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn lint` - Run ESLint
+
+## Git Workflow
+
+**Important:** Always create feature branches from `dev`, not from `main`.
+
+### Creating a New Feature Branch
+
+```bash
+# Switch to dev branch
+git checkout dev
+
+# Pull latest changes
+git pull origin dev
+
+# Create a new feature branch
+git checkout -b feature/your-feature-name
+```
+
+### Submitting Changes
+
+1. Commit your changes to your feature branch
+2. Push the feature branch to GitHub
+3. Create a Pull Request to merge into `dev` (NOT `main`)
+4. After review and approval, merge into `dev`
+
+## Deployment
+
+The project is configured with Firebase Hosting and automatic deployments via GitHub Actions. Push to the `main` branch to trigger a deployment.
+
+## License
+
+© 2025 Neil's Bakery. All rights reserved.
