@@ -19,10 +19,16 @@ export default function Products() {
       items: ['Birthday Cakes', 'Wedding Cakes', 'Cupcakes', 'Cheesecakes'],
     },
     {
-      name: 'Cookies',
-      description: 'Crunchy and soft cookies',
-      icon: '🍪',
-      items: ['Chocolate Chip', 'Oatmeal', 'Sugar Cookies', 'Macarons'],
+      name: 'Sweets',
+      description: 'Delightful sweet treats',
+      icon: '🍬',
+      items: ['Cookies', 'Brownies', 'Macarons', 'Donuts'],
+    },
+    {
+      name: 'Drinks',
+      description: 'Refreshing beverages',
+      icon: '☕',
+      items: ['Coffee', 'Tea', 'Fresh Juice', 'Smoothies'],
     },
   ];
 
@@ -37,11 +43,11 @@ export default function Products() {
           <p className="text-gray-700 text-lg">Discover our wide range of delicious baked goods</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-linear-to-br from-white to-amber-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-amber-200"
+              className="bg-linear-to-br from-white to-amber-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-amber-200 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
             >
               <div className="text-6xl mb-4 text-center">{category.icon}</div>
               <h3 className="text-2xl font-bold text-black mb-2 text-center">{category.name}</h3>
