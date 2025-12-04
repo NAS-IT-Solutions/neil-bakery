@@ -1,30 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { TESTIMONIALS } from '@/lib/constants';
+import { getInitials } from '@/lib/utils';
 
 export default function Feedback() {
   const [rating, setRating] = useState(0);
-
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      rating: 5,
-      comment: 'The best bakery in town! Their croissants are absolutely divine.',
-      date: 'Nov 2024',
-    },
-    {
-      name: 'Michael Chen',
-      rating: 5,
-      comment: 'Fresh bread every day and amazing customer service. Highly recommended!',
-      date: 'Oct 2024',
-    },
-    {
-      name: 'Emma Williams',
-      rating: 5,
-      comment: 'Their custom cakes are works of art. Perfect for special occasions!',
-      date: 'Dec 2024',
-    },
-  ];
 
   return (
     <section id="feedback" className="py-20 bg-amber-50">
@@ -39,14 +20,14 @@ export default function Feedback() {
 
         {/* Testimonials */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
+          {TESTIMONIALS.map((testimonial, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  {testimonial.name.charAt(0)}
+                  {getInitials(testimonial.name)}
                 </div>
                 <div className="ml-4">
                   <h4 className="font-bold text-black">{testimonial.name}</h4>

@@ -1,3 +1,5 @@
+import { STATS } from '@/lib/constants';
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white">
@@ -29,18 +31,12 @@ export default function About() {
               food lovers.
             </p>
             <div className="grid grid-cols-3 gap-4 pt-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600">100+</div>
-                <div className="text-sm text-gray-600">Products</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600">10K+</div>
-                <div className="text-sm text-gray-600">Happy Customers</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-600">5+</div>
-                <div className="text-sm text-gray-600">Outlets</div>
-              </div>
+              {STATS.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl font-bold text-amber-600">{stat.value}</div>
+                  <div className="text-sm text-gray-600">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
