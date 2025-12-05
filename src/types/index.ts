@@ -35,6 +35,8 @@ export interface Outlet {
   address: string;
   hours: string;
   phone: string;
+  lat: number;
+  lng: number;
 }
 
 // Testimonial types
