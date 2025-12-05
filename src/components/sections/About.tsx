@@ -1,46 +1,97 @@
-import { STATS } from '@/lib/constants';
+import { Star, MapPin, ChefHat } from "lucide-react"
 
-export default function About() {
+export default function HEYArenaPage() {
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            About <span className="text-amber-600">Us</span>
-          </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
-        </div>
+    <div className="min-h-screen bg-white">
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        {/* Navigation */}
+        <nav className="mb-8">
+          <button className="flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full ">
+            <MapPin size={20} />
+            <span className="font-semibold">About Neil Bakery</span>
+          </button>
+        </nav>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            {/* Heading */}
+            <div>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                Crafting Happiness
+                <br />           
+                <span className="text-[#e98d1a]">In Every Bite</span>
+              </h1>
+              <div className="w-24 h-1 bg-gray-600 rounded-full"></div>
+            </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="bg-amber-100 rounded-lg h-96 flex items-center justify-center">
-              <span className="text-6xl">🍞</span>
+            {/* Description */}
+            <p className="text-lg text-gray-700 leading-relaxed">
+              At Neil's Bakery, we believe that baking is an art form. For over 40 years, we've been serving our community with the finest baked goods, made fresh daily using traditional recipes and premium ingredients.
+            </p>
+
+            {/* Details */}
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Every loaf of bread, every pastry, and every cake is crafted with care and attention to detail. Our commitment to quality and taste has made us a beloved destination for food lovers.
+            </p>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+              {/* Card 1 */}
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#e98d1a] text-white rounded-full flex items-center justify-center font-bold text-xl">
+                  <ChefHat size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Delicious Bakes</h3>
+                  <p className="text-sm text-gray-600">Freshly made with traditional recipes</p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center">
+                  <Star size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">10K+ Happy Customers</h3>
+                  <p className="text-sm text-gray-600">Trusted by our growing customer base</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-black">Our Story</h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              At Neil's Bakery, we believe that baking is an art form. For over [X] years, we've
-              been serving our community with the finest baked goods, made fresh daily using
-              traditional recipes and premium ingredients.
-            </p>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              Every loaf of bread, every pastry, and every cake is crafted with care and attention
-              to detail. Our commitment to quality and taste has made us a beloved destination for
-              food lovers.
-            </p>
-            <div className="grid grid-cols-3 gap-4 pt-6">
-              {STATS.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-amber-600">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+          {/* Right Image Section */}
+          <div className="relative">
+            {/* Main Image */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="https://www.spoton.com/blog/content/images/2024/06/vintage-bakery-name-ideas.jpeg"
+                alt="Neil Bakery - History and Craftsmanship"
+                className="w-full h-auto object-cover"
+              />
+
+              {/* Review Card */}
+              <div className="absolute bottom-6 right-6 bg-white rounded-2xl p-6 max-w-xs shadow-xl">
+                {/* Stars */}
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                  ))}
                 </div>
-              ))}
+
+                {/* Review Title */}
+                <h4 className="font-bold text-gray-900 mb-1">Highly rated by early users</h4>
+
+                {/* Review Text */}
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Trusted by our growing customer base, designed for a delightful dining experience
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  )
 }

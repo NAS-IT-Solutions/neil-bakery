@@ -18,16 +18,4 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
 
-/* Custom scrollbar styling */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}

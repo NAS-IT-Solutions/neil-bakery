@@ -1,98 +1,126 @@
 'use client';
 
+import { Star } from 'lucide-react';
 import { useState } from 'react';
-import { TESTIMONIALS } from '@/lib/constants';
-import { getInitials } from '@/lib/utils';
+import { CUSTOMER_TESTIMONIALS } from '@/lib/constants';
 
-export default function Feedback() {
-  const [rating, setRating] = useState(0);
+export default function FeedbackNew() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section id="feedback" className="py-20 bg-amber-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Customer <span className="text-amber-600">Feedback</span>
+    <section id="feedback" className="py-20 px-4 bg-[#fbfbfc]">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Hear from Our <span className="text-[#e98d1a]">Customers</span>
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
-          <p className="text-gray-700 text-lg">What our customers say about us</p>
+          <p className="text-lg text-gray-600">Hear the buzz from those who tasted the magic</p>
         </div>
 
-        {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {TESTIMONIALS.map((testimonial, index) => (
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {CUSTOMER_TESTIMONIALS.map((testimonial) => (
             <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+              key={testimonial.id}
+              className="relative group"
+              onMouseEnter={() => setHoveredCard(testimonial.id)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  {getInitials(testimonial.name)}
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                {/* Avatar with Initials */}
+                <div className="flex flex-col items-center text-center mb-2">
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg">{testimonial.name}</h3>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
                 </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-black">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.date}</p>
+
+                {/* Star Rating */}
+                <div className="flex justify-center gap-1 mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={20}
+                      className={`fill-[#e98d1a] text-[#e98d1a] transition-transform duration-300 ${
+                        hoveredCard === testimonial.id
+                          ? 'animate-[shake_0.5s_ease-in-out_infinite]'
+                          : ''
+                      }`}
+                      style={{
+                        animationDelay: `${i * 0.1}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Feedback Text */}
+                <p className="text-gray-700 leading-relaxed min-h-[120px] text-center">
+                  &quot;{testimonial.feedback}&quot;
+                </p>
+
+                {/* See Feedback Button */}
+                <div className="text-center">
+                  <a
+                    href={testimonial.googleReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#e98d1a] font-semibold hover:text-[#d17a0f] transition-colors group"
+                  >
+                    <span>See the Review</span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Decorative Quote Mark */}
+                <div className="absolute top-6 right-6 text-6xl text-gray-100 font-serif opacity-50">
+                  &ldquo;
                 </div>
               </div>
-              <div className="flex mb-3">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-amber-500 text-xl">
-                    ★
-                  </span>
-                ))}
-              </div>
-              <p className="text-gray-700 italic">"{testimonial.comment}"</p>
             </div>
           ))}
         </div>
 
-        {/* Feedback Form */}
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <h3 className="text-2xl font-bold text-black mb-6 text-center">Share Your Experience</h3>
-          <form className="space-y-6">
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Your Name</label>
-              <input
-                type="text"
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-amber-600 focus:outline-none"
-                placeholder="Enter your name"
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Rating</label>
-              <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    onClick={() => setRating(star)}
-                    className="text-3xl focus:outline-none"
-                  >
-                    <span className={star <= rating ? 'text-amber-500' : 'text-gray-300'}>★</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Your Feedback</label>
-              <textarea
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-amber-600 focus:outline-none"
-                rows={4}
-                placeholder="Tell us about your experience"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
-            >
-              Submit Feedback
-            </button>
-          </form>
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <p className="text-gray-600 mb-4">Have you tried our baked goods?</p>
+          <a
+            href="https://maps.app.goo.gl/CPqtbSNBsJBPCT857"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-[#e98d1a] text-white font-semibold rounded-full hover:bg-[#d17a0f] transition-colors shadow-lg hover:shadow-xl"
+          >
+            Leave a Review
+          </a>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes shake {
+          0%,
+          100% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(-10deg);
+          }
+          75% {
+            transform: rotate(10deg);
+          }
+        }
+      `}</style>
     </section>
   );
 }

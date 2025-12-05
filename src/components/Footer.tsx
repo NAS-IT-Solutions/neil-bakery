@@ -8,22 +8,22 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white py-12 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-start">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold text-amber-500 mb-4">{COMPANY_INFO.name}</h3>
+            <h3 className="text-xl font-bold text-[#e98d1a] mb-4">{COMPANY_INFO.name}</h3>
             <p className="text-gray-300 leading-relaxed">{COMPANY_INFO.description}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold text-amber-500 mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold text-[#e98d1a] mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {QUICK_LINKS.map((item) => (
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="text-gray-300 hover:text-amber-500 transition-colors"
+                    className="text-gray-300 hover:text-[#e98d1a] transition-colors"
                   >
                     {item.name}
                   </a>
@@ -32,23 +32,52 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Product Categories */}
+          <div>
+            <h3 className="text-xl font-bold text-[#e98d1a] mb-4">Our Products</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#products" className="text-gray-300 hover:text-[#e98d1a] transition-colors">
+                  🍞 Breads
+                </a>
+              </li>
+              <li>
+                <a href="#products" className="text-gray-300 hover:text-[#e98d1a] transition-colors">
+                  🥐 Pastries
+                </a>
+              </li>
+              <li>
+                <a href="#products" className="text-gray-300 hover:text-[#e98d1a] transition-colors">
+                  🎂 Cakes
+                </a>
+              </li>
+              <li>
+                <a href="#products" className="text-gray-300 hover:text-[#e98d1a] transition-colors">
+                  🍬 Sweets
+                </a>
+              </li>
+              <li>
+                <a href="#products" className="text-gray-300 hover:text-[#e98d1a] transition-colors">
+                  ☕ Drinks
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold text-amber-500 mb-4">Contact Us</h3>
+            <h3 className="text-xl font-bold text-[#e98d1a] mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-300">
               <li>📍 {COMPANY_INFO.address.split(',')[0]}</li>
               <li>📞 {COMPANY_INFO.phone}</li>
               <li>✉️ {COMPANY_INFO.email}</li>
               <li className="pt-2">
                 <div className="flex space-x-4">
-                  <a href="#" className="hover:text-amber-500 transition-colors">
-                    Facebook
+                  <a href="https://www.facebook.com/share/1CrJrfdCLF/" target="_blank" rel="noopener noreferrer" className="hover:text-[#e98d1a] transition-colors">
+                    Facebook  |
                   </a>
-                  <a href="#" className="hover:text-amber-500 transition-colors">
-                    Instagram
-                  </a>
-                  <a href="#" className="hover:text-amber-500 transition-colors">
-                    Twitter
+                  <a href="https://www.instagram.com/neil.bakery?igsh=MTU5OTh1dGd4cnI2eg==" target="_blank" rel="noopener noreferrer" className="hover:text-[#e98d1a] transition-colors">
+                    Instagram  |
                   </a>
                 </div>
               </li>
