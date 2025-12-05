@@ -4,8 +4,8 @@ import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Outlets from '@/components/sections/Outlets';
 import Products from '@/components/sections/Products';
-import Feedback from '@/components/sections/Feedback';
 import Contact from '@/components/sections/Contact';
+import Feedback from '@/components/sections/Feedback';
 
 export default function Home() {
   return (
