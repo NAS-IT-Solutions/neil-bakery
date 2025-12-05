@@ -1,45 +1,121 @@
+'use client';
+
+import { useState } from 'react';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { OUTLETS } from '@/lib/constants';
+import { MapPin } from "lucide-react";
+
+const mapContainerStyle = {
+  width: '100%',
+  height: '600px',
+};
+
+const defaultCenter = { lat: 6.7625, lng: 79.895 };
 
 export default function Outlets() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+  });
+
+  const selectedOutlet =
+    selectedIndex !== null ? OUTLETS[selectedIndex] : null;
+
+  const mapCenter = selectedOutlet
+    ? { lat: selectedOutlet.lat, lng: selectedOutlet.lng }
+    : defaultCenter;
+
+  // Open Google Maps navigation
+  const handleGetDirections = (lat: number, lng: number) => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
+    window.open(url, '_blank');
+  };
 
   return (
-    <section id="outlets" className="py-20 bg-amber-50">
+    <section id="outlets" className="py-20 bg-[#fbfbfc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Our <span className="text-amber-600">Outlets</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-3">
+            Where to <span className="text-[#e98d1a]">Find Us</span>
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
-          <p className="text-gray-700 text-lg">Visit us at any of our convenient locations</p>
+          <p className="text-gray-700 text-lg">
+            Visit us at a location that suits you best!
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {OUTLETS.map((outlet, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-t-4 border-amber-600"
-            >
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-2xl font-bold text-black mb-3">{outlet.name}</h3>
-              <div className="space-y-2 text-gray-700">
-                <p className="flex items-start">
-                  <span className="mr-2">🏠</span>
-                  <span>{outlet.address}</span>
-                </p>
-                <p className="flex items-start">
-                  <span className="mr-2">🕒</span>
-                  <span>{outlet.hours}</span>
-                </p>
-                <p className="flex items-start">
-                  <span className="mr-2">📞</span>
-                  <span>{outlet.phone}</span>
-                </p>
+        {/* Grid layout: left cards + right map */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          {/* LEFT — vertical cards */}
+          <div className="flex flex-col gap-6 max-h-[600px] overflow-y-auto pr-2">
+            {OUTLETS.map((outlet, index) => (
+              <div
+                key={outlet.name}
+                onClick={() => setSelectedIndex(index)}
+                className={`cursor-pointer relative bg-white rounded-xl shadow-md p-5 border-l-4 transition hover:shadow-lg ${selectedIndex === index ? 'border-[#e98d1a]' : 'border-gray-300'
+                  }`}
+              >
+                <h3 className="text-xl font-bold text-black">{outlet.name}</h3>
+
+                <p className="text-gray-600 text-md mt-2">{outlet.address}</p>
+
+                <p className="text-green-700 text-sm font-semibold mt-2">{outlet.hours}</p>
+
+                <p className="text-gray-600 text-sm mt-2">{outlet.phone}</p>
+
+                {/* Arrow icon (directions) with tooltip */}
+                {/* MapPin icon (directions) with tooltip */}
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 group">
+                  <span
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleGetDirections(outlet.lat, outlet.lng);
+                    }}
+                    className="text-[#e98d1a] hover:text-[#d67c15] transition cursor-pointer"
+                  >
+                    <MapPin size={24} />
+                  </span>
+
+                  {/* Tooltip */}
+                  <div className="absolute right-7 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 
+    bg-black text-white text-xs py-1 px-2 rounded-md transition duration-200 whitespace-nowrap">
+                    Get Directions
+                  </div>
+                </div>
+
               </div>
-              <button className="mt-6 w-full bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition-colors font-semibold">
-                Get Directions
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* RIGHT — Google Map */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            {isLoaded ? (
+              <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                center={mapCenter}
+                zoom={12}
+              >
+                {OUTLETS.map((outlet, index) => (
+                  <Marker
+                    key={outlet.name}
+                    position={{ lat: outlet.lat, lng: outlet.lng }}
+                    onClick={() => {
+                      setSelectedIndex(index);
+                      handleGetDirections(outlet.lat, outlet.lng);
+                    }}
+                  />
+                ))}
+              </GoogleMap>
+            ) : (
+              <div className="flex items-center justify-center h-[600px]">
+                <p className="text-gray-500">Loading map…</p>
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
     </section>

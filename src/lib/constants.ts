@@ -21,27 +21,37 @@ export const COMPANY_INFO = {
   address: '123 Bakery Street, Downtown, City, State 12345',
 } as const;
 
-// Outlets data
+// lib/constants.ts
+
 export const OUTLETS: Outlet[] = [
   {
-    name: 'Downtown Branch',
-    address: '123 Main Street, Downtown',
-    hours: 'Mon-Sat: 7AM - 8PM, Sun: 8AM - 6PM',
-    phone: '+1 (555) 123-4567',
+    name: 'Neli Bakery - Moratuwa',
+    address: 'Moratuwa, Colombo',
+    hours: 'Open 5.30 AM - 9.00 PM',
+    phone: '+94 76 094 9867',
+    lat: 6.775279,
+    lng: 79.884022,
   },
+  
   {
-    name: 'Westside Branch',
-    address: '456 West Avenue, Westside',
-    hours: 'Mon-Sat: 7AM - 8PM, Sun: 8AM - 6PM',
-    phone: '+1 (555) 234-5678',
+    name: 'Neli Bakery - Koralawella',
+    address: 'Moratuwa, Colombo',
+    hours: 'Open 5.30 AM - 9.00 PM',
+    phone: '+94 76 101 9656',
+    lat: 6.758583,
+    lng: 79.889378,
   },
+
   {
-    name: 'Eastside Branch',
-    address: '789 East Boulevard, Eastside',
-    hours: 'Mon-Sat: 7AM - 8PM, Sun: 8AM - 6PM',
-    phone: '+1 (555) 345-6789',
-  },
+    name: 'Neli Bakery - Egoda Uyana',
+    address: 'Moratuwa, Colombo', // Example address
+    hours: 'Open 5.30 AM - 9.00 PM',
+    phone: '+94 76 354 6745',
+    lat: 6.743246,
+    lng: 79.892377,
+  }
 ];
+
 
 // Product categories for home page
 export const PRODUCT_CATEGORIES: CategoryItem[] = [
