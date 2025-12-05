@@ -15,10 +15,10 @@ export const COMPANY_INFO = {
   name: "Neil's Bakery",
   tagline: 'Freshly baked goods made with love',
   description:
-    "Freshly baked goods made with love and the finest ingredients. Serving our community since [Year].",
-  email: 'info@neilsbakery.com',
-  phone: '+1 (555) 123-4567',
-  address: '123 Bakery Street, Downtown, City, State 12345',
+    "Freshly baked goods made with love and the finest ingredients. Serving our community since 1978.",
+  email: 'neilbakery87@gmail.com',
+  phone: '0771544293 / 0112657088',
+  address: 'St.Annes Lane Katukurunda Moratuwa ',
 } as const;
 
 // Outlets data
