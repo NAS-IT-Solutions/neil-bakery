@@ -33,7 +33,7 @@ export default function Outlets() {
   };
 
   return (
-    <section id="outlets" className="py-12 sm:py-16 md:py-20 bg-[#fbfbfc]">
+    <section id="outlets" className="py-12 sm:py-28 md:py-28 bg-[#fbfbfc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

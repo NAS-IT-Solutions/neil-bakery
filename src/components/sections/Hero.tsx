@@ -31,7 +31,7 @@ export default function Hero() {
         {images.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-1200 ease-in-out ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           >
