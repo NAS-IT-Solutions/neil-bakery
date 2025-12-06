@@ -1,6 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Products() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const products = [
     {
       image:
@@ -36,7 +41,7 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-12 sm:py-16 md:py-20 bg-[#fbfbfc]">
+    <section id="products" className="py-12 sm:py-28 md:py-28 bg-[#fbfbfc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4">
@@ -90,10 +95,11 @@ export default function Products() {
         </div>
 
         {/* See All Items Button */}
-        <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 max-w-6xl mx-auto">
+        <div className="flex justify-center mt-12 max-w-6xl mx-auto">
           <a
             href="/products"
-            className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-[#e98d1a] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#d17a0f] transition-colors shadow-lg hover:shadow-xl text-center md:min-w-[300px]"
+            className="px-8 py-3 bg-[#e98d1a] text-white font-semibold rounded-lg hover:bg-[#d17a0f] transition-colors shadow-lg hover:shadow-xl text-center"
+            style={{ width: 'calc((200% - 2rem) / 3)' }}
           >
             See All Items
           </a>

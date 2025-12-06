@@ -68,7 +68,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg sm:text-xl font-bold text-[#e98d1a] mb-3 sm:mb-4">Contact Us</h3>
             <ul className="space-y-1.5 sm:space-y-2 text-sm sm:text-base text-gray-300">
-              <li className="break-words">📍 {COMPANY_INFO.address.split(',')[0]}</li>
+              <li className="wrap-break-word">📍 {COMPANY_INFO.address.split(',')[0]}</li>
               <li>📞 {COMPANY_INFO.phone}</li>
               <li className="break-all">✉️ {COMPANY_INFO.email}</li>
               <li className="pt-2">
