@@ -36,66 +36,64 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-20 bg-[#fbfbfc]">
+    <section id="products" className="py-12 sm:py-16 md:py-20 bg-[#fbfbfc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4">
             Fresh from <span className="text-[#e98d1a]">the Oven</span>
           </h2>
-          <p className="text-gray-700 text-lg">Explore our variety of freshly baked delights</p>
+          <p className="text-gray-700 text-base sm:text-lg">Explore our variety of freshly baked delights</p>
         </div>
 
         {/* First Row - 3 Images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mb-6 sm:mb-8">
           {products.slice(0, 3).map((product, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 w-full aspect-square cursor-pointer"
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 w-full aspect-square cursor-pointer"
             >
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover rounded-2xl transition-opacity duration-300 group-hover:opacity-30"
+                className="object-cover rounded-xl sm:rounded-2xl transition-opacity duration-300 group-hover:opacity-30"
               />
               {/* Overlay on Hover */}
               <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-6xl mb-4">{product.icon}</span>
-                <h3 className="text-3xl font-bold text-[#e98d1a]">{product.name}</h3>
+                <span className="text-4xl sm:text-5xl md:text-6xl mb-2 sm:mb-4">{product.icon}</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#e98d1a]">{product.name}</h3>
               </div>
             </div>
           ))}
         </div>
 
         {/* Second Row - 2 Images Centered */}
-        <div className="flex justify-center gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:justify-center gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
           {products.slice(3, 5).map((product, index) => (
             <div
               key={index + 3}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 aspect-square cursor-pointer"
-              style={{ width: 'calc((100% - 2rem) / 3)' }}
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 aspect-square cursor-pointer md:w-[calc((100%-2rem)/3)]"
             >
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover rounded-2xl transition-opacity duration-300 group-hover:opacity-30"
+                className="object-cover rounded-xl sm:rounded-2xl transition-opacity duration-300 group-hover:opacity-30"
               />
               {/* Overlay on Hover */}
               <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-6xl mb-4">{product.icon}</span>
-                <h3 className="text-3xl font-bold text-[#e98d1a]">{product.name}</h3>
+                <span className="text-4xl sm:text-5xl md:text-6xl mb-2 sm:mb-4">{product.icon}</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#e98d1a]">{product.name}</h3>
               </div>
             </div>
           ))}
         </div>
 
         {/* See All Items Button */}
-        <div className="flex justify-center mt-12 max-w-6xl mx-auto">
+        <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 max-w-6xl mx-auto">
           <a
             href="/products"
-            className="px-8 py-3 bg-[#e98d1a] text-white font-semibold rounded-lg hover:bg-[#d17a0f] transition-colors shadow-lg hover:shadow-xl text-center"
-            style={{ width: 'calc((200% - 2rem) / 3)' }}
+            className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-[#e98d1a] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#d17a0f] transition-colors shadow-lg hover:shadow-xl text-center md:min-w-[300px]"
           >
             See All Items
           </a>

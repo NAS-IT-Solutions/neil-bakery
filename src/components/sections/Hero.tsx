@@ -50,8 +50,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* TEXT CONTENT */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center h-full px-4">
-        <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight drop-shadow-xl">
+      <div className="relative z-20 flex flex-col items-center justify-center text-center h-full px-4 sm:px-6 md:px-8">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-xl max-w-5xl">
           Crafting Happiness  
           <br /> in Every Bite !
         </h1>
@@ -60,9 +60,10 @@ export default function Hero() {
       {/* SCROLL DOWN BUTTON */}
       <a
         href="#products"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 text-white animate-bounce"
+        className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-30 text-white animate-bounce"
+        aria-label="Scroll to products"
       >
-        <FaChevronDown size={32} />
+        <FaChevronDown className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
       </a>
     </section>
   );
