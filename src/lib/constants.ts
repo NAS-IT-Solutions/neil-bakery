@@ -12,12 +12,12 @@ export const NAV_ITEMS: NavItem[] = [
 
 // Company information
 export const COMPANY_INFO = {
-  name: "Neil's Bakery",
+  name: "Neil Bakery",
   tagline: 'Freshly baked goods made with love',
   description:
     "Freshly baked goods made with love and the finest ingredients. Serving our community since 1978.",
   email: 'neilbakery87@gmail.com',
-  phone: '0771544293 / 0112657088',
+  phone: '0771544293 | 0112657088',
   address: 'St.Annes Lane Katukurunda Moratuwa ',
 } as const;
 
@@ -178,22 +178,22 @@ export const CONTACT_INFO: ContactInfo[] = [
   {
     icon: '📍',
     title: 'Address',
-    content: ['123 Bakery Street, Downtown', 'City, State 12345'],
+    content: ['St.Annes Lane, Katukurunda, Moratuwa'],
   },
   {
     icon: '📞',
     title: 'Phone',
-    content: '+1 (555) 123-4567',
+    content: '0771544293 | 0112657088',
   },
   {
     icon: '✉️',
     title: 'Email',
-    content: 'info@neilsbakery.com',
+    content: 'neilbakery87@gmail.com',
   },
   {
     icon: '🕒',
     title: 'Business Hours',
-    content: ['Monday - Saturday: 7:00 AM - 8:00 PM', 'Sunday: 8:00 AM - 6:00 PM'],
+    content: ['Monday - Sunday: 5.30 AM - 9.00 PM'],
   },
 ];
 
