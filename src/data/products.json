@@ -615,5 +615,21 @@
       "rating": 4.4,
       "image": "/assets/images/eh_can.jpg"
     }
+  ],
+  "sweets": [
+    {
+      "name": "Cake Piece Small",
+      "description": "Small slice of soft cake",
+      "price": 150,
+      "rating": 4.6,
+      "image": "/assets/images/cake_piece_small.jpg"
+    },
+    {
+      "name": "Cake Piece Thick",
+      "description": "Thick slice of fresh cake",
+      "price": 170,
+      "rating": 4.7,
+      "image": "/assets/images/cake_piece_thick.jpg"
+    }
   ]
 }
