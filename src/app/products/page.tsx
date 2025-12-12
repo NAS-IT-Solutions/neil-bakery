@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+
 import productsData from '@/data/products.json';
 import type { ProductsData, ProductCategory } from '@/types';
 import { formatPrice } from '@/lib/utils';
@@ -25,66 +28,98 @@ export default function ProductsPage() {
   return (
     <>
       <Navbar />
+
       <div className="min-h-screen bg-linear-to-b from-amber-50 to-white">
-        {/* Header */}
-        <div className="bg-amber-600 text-white py-10 sm:py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="inline-block mb-3 sm:mb-4 text-white hover:text-amber-100 transition-colors text-sm sm:text-base">
-            ← Back to Home
-          </Link>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">Our Full Menu</h1>
-          <p className="text-base sm:text-lg md:text-xl text-amber-100">Explore our complete range of delicious products</p>
+        {/* Hero Header */}
+        <div className="h-[50vh] bg-[url('/neli_banner.png')] bg-cover bg-center bg-no-repeat text-white flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
+              Our Full Menu
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-amber-100">
+              Explore our complete range of delicious products
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Products Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        {categories.map((category) => (
-          <section key={category.key} id={category.key} className="mb-10 sm:mb-12 md:mb-16">
-            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-              <span className="text-3xl sm:text-4xl md:text-5xl">{category.icon}</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{category.name}</h2>
-              <div className="flex-1 h-0.5 sm:h-1 bg-amber-600 ml-2 sm:ml-4"></div>
-            </div>
+        {/* Products Grid */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
+          {categories.map((category) => (
+            <section
+              key={category.key}
+              id={category.key}
+              className="mb-10 sm:mb-12 md:mb-16"
+            >
+              {/* Category Header */}
+              <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+                <span className="text-3xl sm:text-4xl md:text-5xl">
+                  {category.icon}
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                  {category.name}
+                </h2>
+                <div className="flex-1 h-0.5 sm:h-1 bg-amber-600 ml-2 sm:ml-4"></div>
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
-              {category.items.map((product, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-amber-100"
-                >
-                  <div className="relative h-40 sm:h-44 md:h-48 bg-linear-to-br from-amber-50 to-orange-50 flex items-center justify-center">
-                    <div className="text-4xl sm:text-5xl md:text-6xl opacity-30">
-                      {category.icon}
+              {/* Products */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+                {category.items.map((product, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-amber-100"
+                  >
+                    {/* Product Image */}
+                    <div className="relative h-40 sm:h-44 md:h-48 bg-amber-50">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        priority={index < 4}
+                      />
                     </div>
-                  </div>
-                  <div className="p-3 sm:p-4">
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2 line-clamp-1">{product.name}</h3>
-                    <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">{product.description}</p>
-                    <div className="flex items-center justify-between">
-                      <div>
+
+                    {/* Product Info */}
+                    <div className="p-3 sm:p-4">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2 line-clamp-1">
+                        {product.name}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
+                        {product.description}
+                      </p>
+
+                      <div className="flex items-center justify-between">
                         <span className="text-xl sm:text-2xl font-bold text-amber-600">
                           {formatPrice(product.price)}
                         </span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="text-yellow-500 text-sm sm:text-base">⭐</span>
-                        <span className="text-xs sm:text-sm font-semibold text-gray-700">{product.rating}</span>
+
+                        <div className="flex items-center gap-1">
+                          <span className="text-yellow-500 text-sm sm:text-base">⭐</span>
+                          <span className="text-xs sm:text-sm font-semibold text-gray-700">
+                            {product.rating}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
 
         {/* Contact CTA */}
         <div className="bg-amber-600 text-white py-8 sm:py-10 md:py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Want to Place an Order?</h2>
-            <p className="text-base sm:text-lg md:text-xl text-amber-100 mb-4 sm:mb-6">Contact us today for fresh baked goods</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+              Want to Place an Order?
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-amber-100 mb-4 sm:mb-6">
+              Contact us today for fresh baked goods
+            </p>
+
             <Link href="/#contact">
               <button className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-white text-amber-600 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg">
                 Contact Us
@@ -93,6 +128,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
