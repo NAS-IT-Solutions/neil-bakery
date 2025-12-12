@@ -7,14 +7,15 @@ import Image from 'next/image';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaTiktok } from 'react-icons/fa6';
-
-
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const handleNavClick = (sectionId: string) => {
     scrollToSection(sectionId);
+    setActiveSection(sectionId);
     setIsMenuOpen(false);
   };
 
@@ -24,28 +25,30 @@ export default function Navbar() {
 
         {/* Logo & Brand */}
         <div
-          className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
+          className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group"
           onClick={() => handleNavClick('home')}
         >
-          <Image
-            src="/logo.png"   /** <-- replace with your real logo path **/
-            alt="Company Logo"
-            width={36}
-            height={36}
-            className="rounded-full w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"
-          />
-          <span className="text-[#e4a53a] font-semibold tracking-wide text-xs sm:text-sm md:text-base uppercase">
+          <div className="relative">
+            <Image
+              src="/logo.png"
+              alt="Company Logo"
+              width={40}
+              height={40}
+              className="rounded-full w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 transition-transform group-hover:scale-110 duration-300 ring-2 ring-[#e98d1a]/20"
+            />
+          </div>
+          <span className="text-white font-bold tracking-tight text-base sm:text-lg md:text-xl">
             Neil Bakery
           </span>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 text-white">
+        <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="hover:text-[#e4a53a] transition-colors text-xs xl:text-sm font-medium whitespace-nowrap"
+              className="relative px-4 py-2 text-base  transition-all duration-300 rounded-lg text-white hover:text-[#e98d1a] cursor-pointer"
             >
               {item.name}
             </button>
@@ -53,55 +56,104 @@ export default function Navbar() {
         </div>
 
         {/* Social Icons */}
-        <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 text-white text-base xl:text-lg">
-          <FaInstagram className="cursor-pointer hover:text-[#e4a53a] transition" />
-          <FaFacebookSquare className="cursor-pointer hover:text-[#e4a53a] transition" />
-          <FaTiktok className="cursor-pointer hover:text-[#e4a53a] transition" />
+        <div className="hidden lg:flex items-center space-x-3">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+          >
+            <FaInstagram className="w-5 h-5" />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+          >
+            <FaFacebookSquare className="w-5 h-5" />
+          </a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+          >
+            <FaTiktok className="w-5 h-5" />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-1"
+          className="lg:hidden p-2 text-white hover:text-[#e98d1a] transition-all duration-300 cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <svg
-            className="h-5 w-5 sm:h-6 sm:w-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            {isMenuOpen ? (
-              <path d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          {isMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-[#3b3f3f] mt-2 rounded-xl py-3 px-4 text-white shadow-lg max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-[#3b3f3f] mt-2 rounded-2xl py-4 px-3 shadow-2xl border border-gray-500 animate-slide-down">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="block w-full text-left py-2.5 px-2 text-sm sm:text-base hover:text-[#e4a53a] hover:bg-[#4a4f4f] rounded-lg transition-colors"
+              className="block w-full text-left py-3 px-4 text-base font-semibold rounded-lg transition-all duration-300 text-white hover:text-[#e98d1a] cursor-pointer"
             >
               {item.name}
             </button>
           ))}
 
-          <div className="flex items-center justify-center space-x-6 mt-4 pt-3 border-t border-gray-600 text-xl">
-            <FaInstagram className="cursor-pointer hover:text-[#e4a53a] transition" />
-            <FaFacebookSquare className="cursor-pointer hover:text-[#e4a53a] transition" />
-            <FaTiktok className="cursor-pointer hover:text-[#e4a53a] transition" />
+          <div className="flex items-center justify-center space-x-4 mt-4 pt-4 border-t border-gray-600">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+            >
+              <FaFacebookSquare className="w-5 h-5" />
+            </a>
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+            >
+              <FaTiktok className="w-5 h-5" />
+            </a>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes slide-down {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slide-down {
+          animation: slide-down 0.3s ease-out;
+        }
+      `}</style>
     </nav>
   );
 }

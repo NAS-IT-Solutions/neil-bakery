@@ -1,9 +1,12 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { CONTACT_INFO } from '@/lib/constants';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function Contact() {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   const iconComponents = {
     '📍': <MapPin size={24} />,
     '📞': <Phone size={24} />,
@@ -12,15 +15,25 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-[#fbfbfc]">
+    <section 
+      ref={elementRef as any}
+      id="contact" 
+      className={`py-12 sm:py-16 md:py-20 bg-[#fbfbfc] transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Connect<span className="text-[#e98d1a]"> with Us</span>
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="inline-block mb-4">
+            <span className="text-xs sm:text-sm font-semibold text-[#e98d1a] uppercase tracking-wider bg-[#e98d1a]/10 px-4 py-2 rounded-full">
+              Get in Touch
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-5">
+            Connect <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e98d1a] to-[#d17a0f]">with Us</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
-            Have questions or special orders? We&apos;d love to hear from you
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Have questions or special orders? We're just a message away
           </p>
         </div>
 
@@ -131,23 +144,24 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Optional: Map or Additional CTA */}
-        <div className="mt-8 sm:mt-12 md:mt-16 text-center">
-          <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Visit us at any of our outlet locations</p>
-          <a
-            href="#outlets"
-            className="inline-flex items-center gap-2 text-[#e98d1a] font-semibold hover:text-[#d17a0f] transition-colors group text-sm sm:text-base"
-          >
-            <span>View Our Outlets</span>
-            <svg
-              className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        {/* CTA Section */}
+        <div className="mt-12 sm:mt-16 md:mt-20">
+          <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center border border-gray-100 shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+              Prefer to Visit Us?
+            </h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-xl mx-auto">
+              Find the nearest outlet and come say hello. We'd love to see you in person!
+            </p>
+            <a
+              href="#outlets"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#e98d1a] font-semibold rounded-full hover:shadow-xl transition-all duration-300 border-2 border-[#e98d1a] hover:bg-[#e98d1a] hover:text-white group text-sm sm:text-base"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+              <MapPin className="w-5 h-5" />
+              <span>View Our Outlets</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
