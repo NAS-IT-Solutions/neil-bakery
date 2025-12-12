@@ -65,7 +65,7 @@ export default function Products() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Fresh from <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e98d1a] to-[#d17a0f]">the Oven</span>
+            Fresh from <span className="text-transparent bg-clip-text bg-linear-to-r from-[#e98d1a] to-[#d17a0f]">the Oven</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
             Discover our wide selection of freshly baked goods made with love every day
@@ -90,10 +90,10 @@ export default function Products() {
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Content Overlay - Always visible on bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-black via-black/40 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-linear-to-t from-black via-black/40 to-transparent">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{product.name}</h3>
                 <p className="text-white/90 text-sm">
                   {product.description}
@@ -124,10 +124,10 @@ export default function Products() {
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Content Overlay - Always visible on bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-black via-black/90 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-linear-to-t from-black via-black/90 to-transparent">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{product.name}</h3>
                 <p className="text-white/90 text-sm">
                   {product.description}
@@ -144,7 +144,7 @@ export default function Products() {
         <div className="flex justify-center">
           <a
             href="/products"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group text-base sm:text-lg"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group text-base sm:text-lg"
           >
             <span>Explore All Products</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

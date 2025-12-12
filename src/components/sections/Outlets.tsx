@@ -108,7 +108,7 @@ export default function Outlets() {
                   {/* Tooltip */}
                   <div className="hidden sm:block absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs py-2 px-3 rounded-lg transition-opacity duration-200 whitespace-nowrap pointer-events-none">
                     Get Directions
-                    <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                    <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
                   </div>
                 </div>
 

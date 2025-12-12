@@ -9,7 +9,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-950 to-black text-white py-12 sm:py-16">
+    <footer className="relative bg-linear-to-b from-gray-900 via-gray-950 to-black text-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
@@ -25,7 +25,7 @@ export default function Footer() {
                   className="rounded-full ring-2 ring-[#e98d1a]/20 hover:ring-[#e98d1a]/40 transition-all duration-300"
                 />
               </div>
-              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#e98d1a] to-[#f5a623]">
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-linear-to-rrom-[#e98d1a] to-[#f5a623]">
                 {COMPANY_INFO.name}
               </h3>
             </div>
@@ -97,17 +97,17 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-white">Get In Touch</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-base text-gray-400">
-                <MapPin className="w-4 h-4 text-[#e98d1a] mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[#e98d1a] mt-0.5 shrink-0" />
                 <span className="leading-relaxed">{COMPANY_INFO.address.split(',')[0]}</span>
               </li>
               <li className="flex items-center gap-3 text-base">
-                <Phone className="w-4 h-4 text-[#e98d1a] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-[#e98d1a] shrink-0" />
                 <a href={`tel:${COMPANY_INFO.phone}`} className="text-gray-400 hover:text-[#e98d1a] transition-colors">
                   {COMPANY_INFO.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-base">
-                <Mail className="w-4 h-4 text-[#e98d1a] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-[#e98d1a] shrink-0" />
                 <a href={`mailto:${COMPANY_INFO.email}`} className="text-gray-400 hover:text-[#e98d1a] transition-colors break-all">
                   {COMPANY_INFO.email}
                 </a>
@@ -120,7 +120,7 @@ export default function Footer() {
                 href="https://www.facebook.com/share/1CrJrfdCLF/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 bg-white/5 hover:bg-gradient-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] rounded-xl border border-white/10 hover:border-transparent transition-all duration-300 hover:scale-110"
+                className="group p-3 bg-white/5 hover:bg-linear-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] rounded-xl border border-white/10 hover:border-transparent transition-all duration-300 hover:scale-110"
               >
                 <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
               </a>
@@ -128,7 +128,7 @@ export default function Footer() {
                 href="https://www.instagram.com/neil.bakery?igsh=MTU5OTh1dGd4cnI2eg=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 bg-white/5 hover:bg-gradient-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] rounded-xl border border-white/10 hover:border-transparent transition-all duration-300 hover:scale-110"
+                className="group p-3 bg-white/5 hover:bg-linear-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] rounded-xl border border-white/10 hover:border-transparent transition-all duration-300 hover:scale-110"
               >
                 <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
               </a>
@@ -136,7 +136,7 @@ export default function Footer() {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 bg-white/5 hover:bg-gradient-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] rounded-xl border border-white/10 hover:border-transparent transition-all duration-300 hover:scale-110"
+                className="group p-3 bg-white/5 hover:bg-linear-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] rounded-xl border border-white/10 hover:border-transparent transition-all duration-300 hover:scale-110"
               >
                 <FaTiktok className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
               </a>

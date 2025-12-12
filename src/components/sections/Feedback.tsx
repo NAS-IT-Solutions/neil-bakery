@@ -52,7 +52,7 @@ export default function FeedbackNew() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-5">
-            Loved by Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e98d1a] to-[#d17a0f]">Customers</span>
+            Loved by Our <span className="text-transparent bg-clip-text bg-linear-to-r from-[#e98d1a] to-[#d17a0f]">Customers</span>
           </h2>
           <p className="text-gray-700 text-base sm:text-lg max-w-2xl mx-auto">
             Don't just take our word for it - here's what our happy customers have to say
@@ -72,7 +72,7 @@ export default function FeedbackNew() {
                 {/* Top Section - Avatar & Info */}
                 <div className="flex items-start gap-4 mb-6">
                   {/* Avatar with Gradient */}
-                  <div className={`flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 ${avatarColors[index % avatarColors.length]} rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`shrink-0 w-14 h-14 sm:w-16 sm:h-16 ${avatarColors[index % avatarColors.length]} rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
                     {getInitials(testimonial.name)}
                   </div>
                   
@@ -142,7 +142,7 @@ export default function FeedbackNew() {
               href="https://maps.app.goo.gl/CPqtbSNBsJBPCT857"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold text-sm sm:text-base rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold text-sm sm:text-base rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
             >
               <Star className="w-5 h-5 fill-current" />
               <span>Leave a Review</span>

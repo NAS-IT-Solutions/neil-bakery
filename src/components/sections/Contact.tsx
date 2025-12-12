@@ -30,7 +30,7 @@ export default function Contact() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-5">
-            Connect <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e98d1a] to-[#d17a0f]">with Us</span>
+            Connect <span className="text-transparent bg-clip-text bg-linear-to-r from-[#e98d1a] to-[#d17a0f]">with Us</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Have questions or special orders? We're just a message away
@@ -59,7 +59,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="font-bold text-gray-900 mb-1.5 sm:mb-2 text-base sm:text-lg">{info.title}</h4>
-                      <div className="text-sm sm:text-base text-gray-600 leading-relaxed break-words">
+                      <div className="text-sm sm:text-base text-gray-600 leading-relaxed wrap-break-word">
                         {Array.isArray(info.content) ? (
                           info.content.map((line, idx) => (
                             <p key={idx} className="mb-1">
@@ -146,7 +146,7 @@ export default function Contact() {
 
         {/* CTA Section */}
         <div className="mt-12 sm:mt-16 md:mt-20">
-          <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center border border-gray-100 shadow-lg">
+          <div className="bg-linear-to-r from-gray-50 to-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center border border-gray-100 shadow-lg">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
               Prefer to Visit Us?
             </h3>

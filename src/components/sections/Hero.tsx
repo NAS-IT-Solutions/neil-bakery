@@ -41,15 +41,15 @@ export default function Hero() {
               alt="Hero Slide Image"
               fill
               priority
-              className="object-cover transition-transform duration-[8000ms]"
+              className="object-cover transition-transform duration-8000"
             />
           </div>
         ))}
       </div>
 
       {/* GRADIENT OVERLAYS */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/30"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-black/40 via-transparent to-black/40"></div>
 
       {/* TEXT CONTENT */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center h-full px-4 sm:px-6 md:px-8">
@@ -64,7 +64,7 @@ export default function Hero() {
         {/* Main Heading */}
         <h1 className="text-white text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold leading-tight tracking-tight mb-6 animate-fade-in-up">
           <span className="block mb-0">Crafting Happiness</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#e98d1a] via-[#f5a623] to-[#e98d1a]">
+          <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#e98d1a] via-[#f5a623] to-[#e98d1a]">
             in Every Bite
           </span>
         </h1>
@@ -78,7 +78,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
           <a
             href="#products"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
             <span>Explore Products</span>
             <ChevronDown className="w-5 h-5" />
