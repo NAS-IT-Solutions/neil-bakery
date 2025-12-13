@@ -26,12 +26,11 @@ export default function Contact() {
     const form = e.currentTarget;
 
     try {
-      // Replace these with your actual EmailJS credentials
       await emailjs.sendForm(
-        'service_ccez37b', // Replace with your EmailJS service ID
-        'template_ivf6rft', // Replace with your EmailJS template ID
+        'service_ccez37b', 
+        'template_ivf6rft', 
         form,
-        'cbTMLeTP9Yqnn-JM8' // Replace with your EmailJS public key
+        'cbTMLeTP9Yqnn-JM8' 
       );
 
       setSubmitStatus('success');
