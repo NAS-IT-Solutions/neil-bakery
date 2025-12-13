@@ -12,6 +12,7 @@ export interface ProductsData {
   pastries: Product[];
   cakes: Product[];
   drinks: Product[];
+  sweets?: Product[];
 }
 
 // Category types
