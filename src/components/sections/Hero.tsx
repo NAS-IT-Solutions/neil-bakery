@@ -32,7 +32,7 @@ export default function Hero() {
         {images.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
               index === current ? "opacity-100 scale-105" : "opacity-0 scale-100"
             }`}
           >
@@ -41,7 +41,7 @@ export default function Hero() {
               alt="Hero Slide Image"
               fill
               priority
-              className="object-cover transition-transform duration-8000"
+              className="object-cover transition-transform duration-6000 ease-out"
             />
           </div>
         ))}
@@ -78,14 +78,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
           <a
             href="#products"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:shadow-2xl active:scale-105 transition-all duration-300"
           >
             <span>Explore Products</span>
             <ChevronDown className="w-5 h-5" />
           </a>
           <a
             href="#outlets"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/20 active:bg-white/20 transition-all duration-300"
           >
             Find Us
           </a>
@@ -100,7 +100,7 @@ export default function Hero() {
               className={`transition-all duration-300 rounded-full ${
                 index === current
                   ? "w-8 h-2 bg-[#e98d1a]"
-                  : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/80 active:bg-white/80"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

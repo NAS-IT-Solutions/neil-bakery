@@ -48,7 +48,7 @@ export default function Navbar() {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="relative px-4 py-2 text-base  transition-all duration-300 rounded-lg text-white hover:text-[#e98d1a] cursor-pointer"
+              className="relative px-4 py-2 text-base  transition-all duration-300 rounded-lg text-white hover:text-[#e98d1a] active:text-[#e98d1a] cursor-pointer"
             >
               {item.name}
             </button>
@@ -61,7 +61,7 @@ export default function Navbar() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
           >
             <FaInstagram className="w-5 h-5" />
           </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
           >
             <FaFacebookSquare className="w-5 h-5" />
           </a>
@@ -77,7 +77,7 @@ export default function Navbar() {
             href="https://tiktok.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
           >
             <FaTiktok className="w-5 h-5" />
           </a>
@@ -85,7 +85,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-white hover:text-[#e98d1a] transition-all duration-300 cursor-pointer"
+          className="lg:hidden p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300 cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -104,7 +104,7 @@ export default function Navbar() {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="block w-full text-left py-3 px-4 text-base font-semibold rounded-lg transition-all duration-300 text-white hover:text-[#e98d1a] cursor-pointer"
+              className="block w-full text-left py-3 px-4 text-base font-semibold rounded-lg transition-all duration-300 text-white hover:text-[#e98d1a] active:text-[#e98d1a] active:bg-white/5 cursor-pointer"
             >
               {item.name}
             </button>
@@ -115,7 +115,7 @@ export default function Navbar() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+              className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
             >
               <FaInstagram className="w-5 h-5" />
             </a>
@@ -123,7 +123,7 @@ export default function Navbar() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+              className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
             >
               <FaFacebookSquare className="w-5 h-5" />
             </a>
@@ -131,7 +131,7 @@ export default function Navbar() {
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white hover:text-[#e98d1a] transition-all duration-300"
+              className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
             >
               <FaTiktok className="w-5 h-5" />
             </a>

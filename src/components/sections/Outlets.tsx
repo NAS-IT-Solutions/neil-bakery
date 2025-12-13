@@ -63,7 +63,7 @@ export default function Outlets() {
               <div
                 key={outlet.name}
                 onClick={() => setSelectedIndex(index)}
-                className={`cursor-pointer relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 border-2 border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                className={`cursor-pointer relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 border-2 border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:shadow-xl active:-translate-y-1 ${
                   selectedIndex === index 
                     ? 'shadow-lg ring-2 ring-[#e98d1a]/20 scale-[1.02]' 
                     : 'shadow-md'
@@ -99,7 +99,7 @@ export default function Outlets() {
                       e.stopPropagation();
                       handleGetDirections(outlet.lat, outlet.lng);
                     }}
-                    className="bg-[#e98d1a] hover:bg-[#d67c15] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                    className="bg-[#e98d1a] hover:bg-[#d67c15] active:bg-[#d67c15] text-white p-3 rounded-full shadow-lg hover:shadow-xl active:shadow-xl transition-all duration-300 hover:scale-110 active:scale-110"
                     aria-label="Get Directions"
                   >
                     <MapPin className="w-5 h-5 sm:w-5 sm:h-5" />

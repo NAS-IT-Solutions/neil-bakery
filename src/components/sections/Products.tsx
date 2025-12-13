@@ -77,20 +77,28 @@ export default function Products() {
           {products.slice(0, 3).map((product, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square"
+              className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 aspect-square ${
+                hoveredIndex === index ? 'shadow-2xl' : ''
+              }`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onTouchStart={() => setHoveredIndex(index)}
+              onTouchEnd={() => setTimeout(() => setHoveredIndex(null), 2000)}
             >
               {/* Image */}
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className={`object-cover transition-transform duration-500 ${
+                  hoveredIndex === index ? 'scale-110' : 'scale-100'
+                }`}
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className={`absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 ${
+                hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+              }`}></div>
               
               {/* Content Overlay - Always visible on bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-linear-to-t from-black via-black/40 to-transparent">
@@ -101,7 +109,9 @@ export default function Products() {
               </div>
 
               {/* Decorative Corner */}
-              <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/30 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className={`absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/30 rounded-tr-xl transition-opacity duration-300 ${
+                hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+              }`}></div>
             </div>
           ))}
         </div>
@@ -111,20 +121,28 @@ export default function Products() {
           {products.slice(3, 5).map((product, index) => (
             <div
               key={index + 3}
-              className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square md:w-[calc((100%-2rem)/3)]"
+              className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 aspect-square md:w-[calc((100%-2rem)/3)] ${
+                hoveredIndex === index + 3 ? 'shadow-2xl' : ''
+              }`}
               onMouseEnter={() => setHoveredIndex(index + 3)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onTouchStart={() => setHoveredIndex(index + 3)}
+              onTouchEnd={() => setTimeout(() => setHoveredIndex(null), 2000)}
             >
               {/* Image */}
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className={`object-cover transition-transform duration-500 ${
+                  hoveredIndex === index + 3 ? 'scale-110' : 'scale-100'
+                }`}
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className={`absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 ${
+                hoveredIndex === index + 3 ? 'opacity-100' : 'opacity-0'
+              }`}></div>
               
               {/* Content Overlay - Always visible on bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-linear-to-t from-black via-black/90 to-transparent">
@@ -135,7 +153,9 @@ export default function Products() {
               </div>
 
               {/* Decorative Corner */}
-              <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/30 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className={`absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/30 rounded-tr-xl transition-opacity duration-300 ${
+                hoveredIndex === index + 3 ? 'opacity-100' : 'opacity-0'
+              }`}></div>
             </div>
           ))}
         </div>
@@ -144,10 +164,10 @@ export default function Products() {
         <div className="flex justify-center">
           <a
             href="/products"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group text-base sm:text-lg"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:shadow-xl active:scale-105 transition-all duration-300 group text-base sm:text-lg"
           >
             <span>Explore All Products</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 group-active:translate-x-1 transition-transform" />
           </a>
         </div>
       </div>

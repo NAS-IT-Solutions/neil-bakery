@@ -64,15 +64,21 @@ export default function FeedbackNew() {
           {CUSTOMER_TESTIMONIALS.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="relative group h-full"
+              className="relative h-full"
               onMouseEnter={() => setHoveredCard(testimonial.id)}
               onMouseLeave={() => setHoveredCard(null)}
+              onTouchStart={() => setHoveredCard(testimonial.id)}
+              onTouchEnd={() => setTimeout(() => setHoveredCard(null), 2000)}
             >
-              <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+              <div className={`relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg transition-all duration-500 transform border border-gray-100 h-full flex flex-col ${
+                hoveredCard === testimonial.id ? 'shadow-2xl -translate-y-2' : ''
+              }`}>
                 {/* Top Section - Avatar & Info */}
                 <div className="flex items-start gap-4 mb-6">
                   {/* Avatar with Gradient */}
-                  <div className={`shrink-0 w-14 h-14 sm:w-16 sm:h-16 ${avatarColors[index % avatarColors.length]} rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`shrink-0 w-14 h-14 sm:w-16 sm:h-16 ${avatarColors[index % avatarColors.length]} rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transform transition-transform duration-300 ${
+                    hoveredCard === testimonial.id ? 'scale-110' : ''
+                  }`}>
                     {getInitials(testimonial.name)}
                   </div>
                   
@@ -116,10 +122,10 @@ export default function FeedbackNew() {
                     href={testimonial.googleReviewUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#e98d1a] font-semibold hover:text-[#d17a0f] transition-all group/link text-sm"
+                    className="inline-flex items-center gap-2 text-[#e98d1a] font-semibold hover:text-[#d17a0f] active:text-[#d17a0f] transition-all group/link text-sm"
                   >
                     <span>View on Google</span>
-                    <ExternalLink className="w-4 h-4 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    <ExternalLink className="w-4 h-4 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 group-active/link:translate-x-0.5 group-active/link:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
 
@@ -142,7 +148,7 @@ export default function FeedbackNew() {
               href="https://maps.app.goo.gl/CPqtbSNBsJBPCT857"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold text-sm sm:text-base rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold text-sm sm:text-base rounded-full hover:shadow-xl hover:scale-105 active:shadow-xl active:scale-105 transition-all duration-300 shadow-lg"
             >
               <Star className="w-5 h-5 fill-current" />
               <span>Leave a Review</span>
