@@ -33,7 +33,7 @@ export default function Footer() {
               {COMPANY_INFO.description}
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#e98d1a]/10 rounded-full">
-              <span className="text-sm text-[#e98d1a] font-semibold">Fresh Daily Since 1978</span>
+              <span className="text-sm text-[#e98d1a] font-semibold">Fresh Daily Since 1990</span>
             </div>
           </div>
 

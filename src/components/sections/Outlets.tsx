@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { OUTLETS } from '@/lib/constants';
-import { MapPin } from "lucide-react";
+import { MapPin } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const mapContainerStyle = {
@@ -21,8 +21,7 @@ export default function Outlets() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
-  const selectedOutlet =
-    selectedIndex !== null ? OUTLETS[selectedIndex] : null;
+  const selectedOutlet = selectedIndex !== null ? OUTLETS[selectedIndex] : null;
 
   const mapCenter = selectedOutlet
     ? { lat: selectedOutlet.lat, lng: selectedOutlet.lng }
@@ -35,15 +34,19 @@ export default function Outlets() {
   };
 
   return (
-    <section 
+    <section
       ref={elementRef as any}
-      id="outlets" 
+      id="outlets"
       className={`py-12 sm:py-16 md:py-20 bg-[#fbfbfc] transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-block mb-4">
+          <span className="text-xs sm:text-sm font-semibold text-[#e98d1a] uppercase tracking-wider bg-[#e98d1a]/10 px-4 py-2 rounded-full">
+            Our Outlets
+          </span>
+        </div>
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4">
@@ -56,7 +59,6 @@ export default function Outlets() {
 
         {/* Grid layout: left cards + right map */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
-
           {/* LEFT — vertical cards */}
           <div className="flex flex-col gap-4 sm:gap-5">
             {OUTLETS.map((outlet, index) => (
@@ -64,8 +66,8 @@ export default function Outlets() {
                 key={outlet.name}
                 onClick={() => setSelectedIndex(index)}
                 className={`cursor-pointer relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 border-2 border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:shadow-xl active:-translate-y-1 ${
-                  selectedIndex === index 
-                    ? 'shadow-lg ring-2 ring-[#e98d1a]/20 scale-[1.02]' 
+                  selectedIndex === index
+                    ? 'shadow-lg ring-2 ring-[#e98d1a]/20 scale-[1.02]'
                     : 'shadow-md'
                 }`}
               >
@@ -111,7 +113,6 @@ export default function Outlets() {
                     <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
                   </div>
                 </div>
-
               </div>
             ))}
           </div>
@@ -140,7 +141,9 @@ export default function Outlets() {
                     onClick={() => {
                       setSelectedIndex(index);
                     }}
-                    animation={selectedIndex === index ? window.google.maps.Animation.BOUNCE : undefined}
+                    animation={
+                      selectedIndex === index ? window.google.maps.Animation.BOUNCE : undefined
+                    }
                   />
                 ))}
               </GoogleMap>
@@ -151,7 +154,6 @@ export default function Outlets() {
               </div>
             )}
           </div>
-
         </div>
       </div>
 

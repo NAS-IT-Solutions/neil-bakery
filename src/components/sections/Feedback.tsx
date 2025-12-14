@@ -148,7 +148,7 @@ export default function FeedbackNew() {
               href="https://maps.app.goo.gl/CPqtbSNBsJBPCT857"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold text-sm sm:text-base rounded-full hover:shadow-xl hover:scale-105 active:shadow-xl active:scale-105 transition-all duration-300 shadow-lg"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#e98d1a] text-white font-semibold text-sm sm:text-base rounded-full hover:shadow-xl hover:scale-105 active:shadow-xl active:scale-105 transition-all duration-300 shadow-lg"
             >
               <Star className="w-5 h-5 fill-current" />
               <span>Leave a Review</span>

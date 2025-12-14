@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import type { ProductsData } from "@/types"
@@ -40,6 +40,45 @@ export default function ProductsClient({ products }: Props) {
 
     const [selected, setSelected] = useState<FilterKey[]>(["all"])
     const isAllActive = selected.includes("all")
+
+    // Handle hash navigation on mount and hash changes
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash.slice(1) 
+            if (hash) {
+                // Small delay to ensure DOM is ready
+                setTimeout(() => {
+                    const element = document.getElementById(hash)
+                    if (element) {
+                        const offset = 100 
+                        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                        const offsetPosition = elementPosition - offset
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        })
+                        
+                        // Update filter to show the category
+                        const categoryKey = hash as FilterKey
+                        if (categoryKey !== 'all' && ['bread', 'pastries', 'cakes', 'drinks', 'sweets'].includes(categoryKey)) {
+                            setSelected([categoryKey])
+                        }
+                    }
+                }, 100)
+            }
+        }
+
+        // Handle initial hash on mount
+        handleHashChange()
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange)
+        
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange)
+        }
+    }, [])
 
     const heroButtons: { key: FilterKey; label: string }[] = [
         { key: "all", label: "All" },
@@ -84,7 +123,7 @@ export default function ProductsClient({ products }: Props) {
                         {/* Badge - Hidden on mobile if needed */}
                         <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                             <span>✨</span>
-                            <span>Fresh Daily Since 1974</span>
+                            <span>Fresh Daily Since 1990</span>
                         </div>
 
                         {/* Title Section */}
@@ -129,7 +168,7 @@ export default function ProductsClient({ products }: Props) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
                 <div className="space-y-20">
                     {visibleCategories.map((category) => (
-                        <section key={category.key} className="space-y-10">
+                        <section key={category.key} id={category.key} className="space-y-10 scroll-mt-24">
                             {/* Category Header */}
                             <div className="flex items-center gap-4">
                                 <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 tracking-tight">{category.name}</h2>
