@@ -12,6 +12,7 @@ export interface ProductsData {
   pastries: Product[];
   cakes: Product[];
   drinks: Product[];
+  sweets?: Product[];
 }
 
 // Category types
@@ -35,6 +36,8 @@ export interface Outlet {
   address: string;
   hours: string;
   phone: string;
+  lat: number;
+  lng: number;
 }
 
 // Testimonial types

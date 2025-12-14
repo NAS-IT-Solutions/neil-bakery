@@ -1,47 +1,176 @@
+'use client';
+
+import { useState } from 'react';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { OUTLETS } from '@/lib/constants';
+import { MapPin } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+const mapContainerStyle = {
+  width: '100%',
+  height: '600px',
+};
+
+const defaultCenter = { lat: 6.7625, lng: 79.895 };
 
 export default function Outlets() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const { elementRef, isVisible } = useScrollAnimation();
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+  });
+
+  const selectedOutlet =
+    selectedIndex !== null ? OUTLETS[selectedIndex] : null;
+
+  const mapCenter = selectedOutlet
+    ? { lat: selectedOutlet.lat, lng: selectedOutlet.lng }
+    : defaultCenter;
+
+  // Open Google Maps navigation
+  const handleGetDirections = (lat: number, lng: number) => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
+    window.open(url, '_blank');
+  };
 
   return (
-    <section id="outlets" className="py-20 bg-amber-50">
+    <section 
+      ref={elementRef as any}
+      id="outlets" 
+      className={`py-12 sm:py-16 md:py-20 bg-[#fbfbfc] transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Our <span className="text-amber-600">Outlets</span>
+
+        {/* Header */}
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4">
+            Where to <span className="text-[#e98d1a]">Find Us</span>
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
-          <p className="text-gray-700 text-lg">Visit us at any of our convenient locations</p>
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+            Visit us at any of our convenient locations and experience freshly baked goodness!
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {OUTLETS.map((outlet, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-t-4 border-amber-600"
-            >
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-2xl font-bold text-black mb-3">{outlet.name}</h3>
-              <div className="space-y-2 text-gray-700">
-                <p className="flex items-start">
-                  <span className="mr-2">🏠</span>
-                  <span>{outlet.address}</span>
-                </p>
-                <p className="flex items-start">
-                  <span className="mr-2">🕒</span>
-                  <span>{outlet.hours}</span>
-                </p>
-                <p className="flex items-start">
-                  <span className="mr-2">📞</span>
-                  <span>{outlet.phone}</span>
-                </p>
+        {/* Grid layout: left cards + right map */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
+
+          {/* LEFT — vertical cards */}
+          <div className="flex flex-col gap-4 sm:gap-5">
+            {OUTLETS.map((outlet, index) => (
+              <div
+                key={outlet.name}
+                onClick={() => setSelectedIndex(index)}
+                className={`cursor-pointer relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 border-2 border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:shadow-xl active:-translate-y-1 ${
+                  selectedIndex === index 
+                    ? 'shadow-lg ring-2 ring-[#e98d1a]/20 scale-[1.02]' 
+                    : 'shadow-md'
+                }`}
+              >
+                <div className="pr-12">
+                  <h3 className="text-lg sm:text-xl font-bold text-black mb-3 flex items-center gap-2">
+                    {outlet.name}
+                  </h3>
+
+                  <div className="space-y-2.5">
+                    <p className="text-gray-700 text-sm sm:text-base flex items-start gap-2">
+                      <span className="text-[#e98d1a] mt-0.5">📍</span>
+                      <span>{outlet.address}</span>
+                    </p>
+
+                    <p className="text-gray-600 text-xs sm:text-sm flex items-center gap-2">
+                      <span className="text-[#e98d1a]">📞</span>
+                      {outlet.phone}
+                    </p>
+
+                    <p className="text-green-600 text-xs sm:text-sm font-semibold flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-lg w-fit">
+                      <span>🕒</span>
+                      {outlet.hours}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Get Directions Button */}
+                <div className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 group">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleGetDirections(outlet.lat, outlet.lng);
+                    }}
+                    className="bg-[#e98d1a] hover:bg-[#d67c15] active:bg-[#d67c15] text-white p-3 rounded-full shadow-lg hover:shadow-xl active:shadow-xl transition-all duration-300 hover:scale-110 active:scale-110"
+                    aria-label="Get Directions"
+                  >
+                    <MapPin className="w-5 h-5 sm:w-5 sm:h-5" />
+                  </button>
+
+                  {/* Tooltip */}
+                  <div className="hidden sm:block absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs py-2 px-3 rounded-lg transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                    Get Directions
+                    <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                  </div>
+                </div>
+
               </div>
-              <button className="mt-6 w-full bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition-colors font-semibold">
-                Get Directions
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* RIGHT — Google Map */}
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden h-[400px] sm:h-[500px] md:h-[600px] sticky top-4">
+            {isLoaded ? (
+              <GoogleMap
+                mapContainerStyle={{ width: '100%', height: '100%' }}
+                center={mapCenter}
+                zoom={12}
+                options={{
+                  styles: [
+                    {
+                      featureType: 'poi',
+                      elementType: 'labels',
+                      stylers: [{ visibility: 'off' }],
+                    },
+                  ],
+                }}
+              >
+                {OUTLETS.map((outlet, index) => (
+                  <Marker
+                    key={outlet.name}
+                    position={{ lat: outlet.lat, lng: outlet.lng }}
+                    onClick={() => {
+                      setSelectedIndex(index);
+                    }}
+                    animation={selectedIndex === index ? window.google.maps.Animation.BOUNCE : undefined}
+                  />
+                ))}
+              </GoogleMap>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full bg-gray-50">
+                <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#e98d1a] border-t-transparent mb-4"></div>
+                <p className="text-gray-500 text-sm sm:text-base font-medium">Loading map...</p>
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #e98d1a;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #d67c15;
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,87 +1,159 @@
 'use client';
 
 import { useState } from 'react';
-import { NAV_ITEMS, COMPANY_INFO } from '@/lib/constants';
+import { NAV_ITEMS } from '@/lib/constants';
 import { scrollToSection } from '@/lib/utils';
+import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FaTiktok } from 'react-icons/fa6';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const handleNavClick = (sectionId: string) => {
     scrollToSection(sectionId);
+    setActiveSection(sectionId);
     setIsMenuOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b-2 border-amber-500">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="shrink-0">
-            <button
-              onClick={() => handleNavClick('home')}
-              className="text-2xl font-bold text-black hover:text-amber-600 transition-colors"
-              aria-label="Go to home"
-            >
-              {COMPANY_INFO.name.split("'")[0]}'s <span className="text-amber-600">Bakery</span>
-            </button>
-          </div>
+    <nav className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%]">
+      <div className="bg-[#3b3f3f] rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 flex items-center justify-between shadow-lg border border-gray-500">
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className="text-black hover:text-amber-600 transition-colors font-medium text-base tracking-wide"
-              >
-                {item.name}
-              </button>
-            ))}
+        {/* Logo & Brand */}
+        <div
+          className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group"
+          onClick={() => handleNavClick('home')}
+        >
+          <div className="relative">
+            <Image
+              src="/logo.png"
+              alt="Company Logo"
+              width={40}
+              height={40}
+              className="rounded-full w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 transition-transform group-hover:scale-110 duration-300 ring-2 ring-[#e98d1a]/20"
+            />
           </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-black hover:text-amber-600 focus:outline-none"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
+          <span className="text-white font-bold tracking-tight text-base sm:text-lg md:text-xl">
+            Neil Bakery
+          </span>
         </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className="relative px-4 py-2 text-base  transition-all duration-300 rounded-lg text-white hover:text-[#e98d1a] active:text-[#e98d1a] cursor-pointer"
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Social Icons */}
+        <div className="hidden lg:flex items-center space-x-3">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+          >
+            <FaInstagram className="w-5 h-5" />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+          >
+            <FaFacebookSquare className="w-5 h-5" />
+          </a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+          >
+            <FaTiktok className="w-5 h-5" />
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300 cursor-pointer"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
+        </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-amber-200">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className="block w-full text-left px-3 py-2 text-black hover:text-amber-600 hover:bg-amber-50 transition-colors font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
+        <div className="lg:hidden bg-[#3b3f3f] mt-2 rounded-2xl py-4 px-3 shadow-2xl border border-gray-500 animate-slide-down">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className="block w-full text-left py-3 px-4 text-base font-semibold rounded-lg transition-all duration-300 text-white hover:text-[#e98d1a] active:text-[#e98d1a] active:bg-white/5 cursor-pointer"
+            >
+              {item.name}
+            </button>
+          ))}
+
+          <div className="flex items-center justify-center space-x-4 mt-4 pt-4 border-t border-gray-600">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+            >
+              <FaFacebookSquare className="w-5 h-5" />
+            </a>
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+            >
+              <FaTiktok className="w-5 h-5" />
+            </a>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes slide-down {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slide-down {
+          animation: slide-down 0.3s ease-out;
+        }
+      `}</style>
     </nav>
   );
 }
