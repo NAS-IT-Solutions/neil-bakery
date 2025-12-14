@@ -10,19 +10,19 @@ export default function OurJourneyPage() {
         {
             year: "1990",
             title: "The Beginning",
-            description: "Neil Bakery was founded in 1990 with a simple mission: to bring fresh, quality baked goods to our community. Starting with just a small oven and a passion for baking, we began our journey in Moratuwa, serving traditional breads and pastries made from the finest ingredients.",
+            description: "Neil Bakery began its journey in 1990 as a small bakery in Egoda Uyana, Sri Lanka, founded with a passion for freshly baked bread and quality pastries. With fewer than five team members, we focused on serving our local community with care, consistency, and homemade taste. What started as a small business quickly became a trusted neighborhood bakery, built on strong relationships and a commitment to quality that set us apart from the very beginning.",
             image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072"
         },
         {
             year: "2005",
             title: "Growing with You",
-            description: "As our community grew, so did we. We expanded our product line to include custom cakes, specialty pastries, and refreshing beverages. Our commitment to quality and customer satisfaction led to the opening of our second location in Koralawella, allowing us to serve even more families with our freshly baked goods.",
+            description: "As our customers grew, so did Neil Bakery. Founded by Mr. Neil, the business expanded its product range to include delicious cakes, refreshing drinks, and a wider variety of baked goods. With growing demand, we proudly opened three main outlets in Koralawella and Moratuwa, Sri Lanka, reaching more families and celebrations every day. Guided by our brand promise “Crafting happiness in every bite” we continue to grow alongside our customers, turning everyday moments into sweet memories.",
             image: "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070"
         },
         {
             year: "2025",
             title: "Today & Beyond",
-            description: "Today, Neil Bakery operates three successful locations across Moratuwa, including our newest branch in Egoda Uyana. We continue to honor our traditional recipes while innovating with new flavors and products. Every morning, we bake fresh goods with the same love and dedication that started it all 35 years ago.",
+            description: "Today, Neil Bakery is powered by a dedicated team of 30+ employees, producing over 1,000 bakery items daily while maintaining the quality our customers love. With 35+ years of experience, we are proud of the trust we’ve earned and the positive customer feedback that drives us forward. As we look to the future, our focus remains on innovation, consistency, and delivering exceptional bakery products that bring happiness today and for generations to come.",
             image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=2070"
         }
     ]
@@ -67,13 +67,12 @@ export default function OurJourneyPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
                     <div className="space-y-24 sm:space-y-32">
                         {journeySteps.map((step, index) => (
-                            <div 
+                            <div
                                 key={index}
-                                className={`flex flex-col ${
-                                    index % 2 === 0 
-                                        ? 'lg:flex-row' 
+                                className={`flex flex-col ${index % 2 === 0
+                                        ? 'lg:flex-row'
                                         : 'lg:flex-row-reverse'
-                                } gap-8 sm:gap-12 lg:gap-16 items-center`}
+                                    } gap-8 sm:gap-12 lg:gap-16 items-center`}
                             >
                                 {/* Image */}
                                 <div className="w-full lg:w-1/2">
@@ -100,7 +99,7 @@ export default function OurJourneyPage() {
                                         </h2>
                                         <div className="h-1 w-20 bg-[#e98d1a] rounded-full"></div>
                                     </div>
-                                    <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+                                    <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-[justify]">
                                         {step.description}
                                     </p>
                                 </div>
