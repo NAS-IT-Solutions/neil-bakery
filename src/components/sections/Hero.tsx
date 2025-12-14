@@ -57,7 +57,7 @@ export default function Hero() {
         <div className="mb-6 animate-fade-in">
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white text-xs sm:text-sm font-semibold shadow-lg">
             <Sparkles className="w-4 h-4 text-[#e98d1a]" />
-            Fresh Daily Since 1974
+            Fresh Daily Since 1990
           </span>
         </div>
 

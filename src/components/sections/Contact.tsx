@@ -66,7 +66,7 @@ export default function Contact() {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-5">
             Connect{' '}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#e98d1a] to-[#d17a0f]">
+            <span className="text-transparent bg-clip-text bg-[#e98d1a]">
               with Us
             </span>
           </h2>
