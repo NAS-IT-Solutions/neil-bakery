@@ -4,41 +4,52 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useRouter } from 'next/navigation';
 
 export default function Products() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { elementRef, isVisible } = useScrollAnimation();
+  const router = useRouter();
+
+  const handleProductClick = (categoryKey: string) => {
+    router.push(`/products#${categoryKey}`);
+  };
 
   const products = [
     {
       image:
         'https://defencebakery.in/cdn/shop/files/Multi_Grain_Bread.jpg?v=1756544969&width=1500',
       name: 'Breads',
-      description: 'Freshly baked daily'
+      description: 'Freshly baked daily',
+      key: 'bread'
     },
     {
       image:
         'https://images.stockcake.com/public/b/8/b/b8bca4f2-33d0-40cb-a267-d57d747713cc_large/assorted-breakfast-pastries-stockcake.jpg',
       name: 'Pastries',
-      description: 'Flaky & delicious'
+      description: 'Flaky & delicious',
+      key: 'pastries'
     },
     {
       image:
-        'https://thumbs.dreamstime.com/b/sweet-pastries-berries-form-cake-muffins-showcase-pastry-shop-glass-stand-eclair-cakes-tartlets-refrigerator-294305026.jpg',
+        'https://plus.unsplash.com/premium_photo-1713447395823-2e0b40b75a89?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FrZXN8ZW58MHx8MHx8fDA%3D',
       name: 'Cakes',
-      description: 'Custom & ready-made'
+      description: 'Custom & ready-made',
+      key: 'cakes'
     },
     {
       image:
         'https://img.freepik.com/premium-photo/soft-drinks-water-splashes-color-natural-black-background_1091270-9168.jpg?w=360',
       name: 'Drinks',
-      description: 'Hot & cold beverages'
+      description: 'Hot & cold beverages',
+      key: 'drinks'
     },
     {
       image:
         'https://static.vecteezy.com/system/resources/previews/049/544/454/large_2x/plate-of-assorted-cakes-and-pastries-being-decorated-with-powdered-sugar-photo.jpg',
       name: 'Sweets',
-      description: 'Traditional treats'
+      description: 'Traditional treats',
+      key: 'sweets'
     },
   ];
 
@@ -77,9 +88,10 @@ export default function Products() {
           {products.slice(0, 3).map((product, index) => (
             <div
               key={index}
-              className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 aspect-square ${
+              className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 aspect-square cursor-pointer ${
                 hoveredIndex === index ? 'shadow-2xl' : ''
               }`}
+              onClick={() => handleProductClick(product.key)}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               onTouchStart={() => setHoveredIndex(index)}
@@ -121,9 +133,10 @@ export default function Products() {
           {products.slice(3, 5).map((product, index) => (
             <div
               key={index + 3}
-              className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 aspect-square md:w-[calc((100%-2rem)/3)] ${
+              className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 aspect-square md:w-[calc((100%-2rem)/3)] cursor-pointer ${
                 hoveredIndex === index + 3 ? 'shadow-2xl' : ''
               }`}
+              onClick={() => handleProductClick(product.key)}
               onMouseEnter={() => setHoveredIndex(index + 3)}
               onMouseLeave={() => setHoveredIndex(null)}
               onTouchStart={() => setHoveredIndex(index + 3)}
@@ -164,7 +177,7 @@ export default function Products() {
         <div className="flex justify-center">
           <a
             href="/products"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:shadow-xl active:scale-105 transition-all duration-300 group text-base sm:text-lg"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-[#e98d1a] to-[#d17a0f] text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:shadow-xl active:scale-105 transition-all duration-300 group text-base sm:text-md"
           >
             <span>Explore All Products</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 group-active:translate-x-1 transition-transform" />
