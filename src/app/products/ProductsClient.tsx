@@ -214,7 +214,7 @@ export default function ProductsClient({ products }: Props) {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-12 sm:mt-8 md:mt-3 px-4 sm:px-6 lg:px-8">
+            <div className="mt-12 mb-20 sm:mt-8 md:mt-3 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-linear-to-r from-gray-50 to-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center border border-gray-100 shadow-lg">
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
@@ -227,7 +227,7 @@ export default function ProductsClient({ products }: Props) {
 
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-neutral-900 font-semibold rounded-full hover:shadow-xl active:shadow-xl transition-all duration-300 border-2 border-neutral-900 hover:bg-neutral-900 hover:text-white active:bg-neutral-900 active:text-white group text-sm sm:text-base"
+                            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#e98d1a] font-semibold rounded-full hover:shadow-xl transition-all duration-300 border-2 border-[#e98d1a] hover:bg-[#e98d1a] hover:text-white group text-sm sm:text-base"
                         >
                             <span>Get in Touch</span>
                         </Link>
