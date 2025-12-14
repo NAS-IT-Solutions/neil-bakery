@@ -20,7 +20,7 @@ export function formatPrice(price: number): string {
 export function scrollToSection(sectionId: string): void {
   const element = document.getElementById(sectionId);
   if (element) {
-    const navbarHeight = 50; // Approximate navbar height
+    const navbarHeight = 70; // Approximate navbar height
     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
     const offsetPosition = elementPosition - navbarHeight;
 
