@@ -7,26 +7,40 @@ import Image from 'next/image';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaTiktok } from 'react-icons/fa6';
-import { Menu, X } from 'lucide-react';
+import { Facebook, Instagram, Menu, X } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId);
+    // If we're not on the homepage, navigate there first
+    if (pathname !== '/') {
+      router.push(`/#${sectionId}`);
+    } else {
+      scrollToSection(sectionId);
+    }
     setActiveSection(sectionId);
+    setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    // Navigate to homepage
+    router.push('/');
+    setActiveSection('home');
     setIsMenuOpen(false);
   };
 
   return (
     <nav className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%]">
       <div className="bg-[#3b3f3f] rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 flex items-center justify-between shadow-lg border border-gray-500">
-
         {/* Logo & Brand */}
         <div
           className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group"
-          onClick={() => handleNavClick('home')}
+          onClick={handleLogoClick}
         >
           <div className="relative">
             <Image
@@ -55,31 +69,31 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Social Icons */}
-        <div className="hidden lg:flex items-center space-x-3">
+        {/* Social Links */}
+        <div className="hidden lg:flex items-center gap-2">
           <a
-            href="https://instagram.com"
+            href="https://www.facebook.com/share/1CrJrfdCLF/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+            className="group p-2 bg-white/5 hover:bg-linear-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] active:bg-linear-to-r active:from-[#e98d1a] active:to-[#d17a0f] rounded-lg border border-white/10 hover:border-transparent active:border-transparent transition-all duration-300 hover:scale-110 active:scale-110"
           >
-            <FaInstagram className="w-5 h-5" />
+            <Facebook className="w-4 h-4 text-gray-400 group-hover:text-white group-active:text-white transition-colors" />
           </a>
           <a
-            href="https://facebook.com"
+            href="https://www.instagram.com/neil.bakery?igsh=MTU5OTh1dGd4cnI2eg=="
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+            className="group p-2 bg-white/5 hover:bg-linear-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] active:bg-linear-to-r active:from-[#e98d1a] active:to-[#d17a0f] rounded-lg border border-white/10 hover:border-transparent active:border-transparent transition-all duration-300 hover:scale-110 active:scale-110"
           >
-            <FaFacebookSquare className="w-5 h-5" />
+            <Instagram className="w-4 h-4 text-gray-400 group-hover:text-white group-active:text-white transition-colors" />
           </a>
           <a
             href="https://tiktok.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
+            className="group p-2 bg-white/5 hover:bg-linear-to-r hover:from-[#e98d1a] hover:to-[#d17a0f] active:bg-linear-to-r active:from-[#e98d1a] active:to-[#d17a0f] rounded-lg border border-white/10 hover:border-transparent active:border-transparent transition-all duration-300 hover:scale-110 active:scale-110"
           >
-            <FaTiktok className="w-5 h-5" />
+            <FaTiktok className="w-4 h-4 text-gray-400 group-hover:text-white group-active:text-white transition-colors" />
           </a>
         </div>
 
@@ -89,11 +103,7 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -112,20 +122,20 @@ export default function Navbar() {
 
           <div className="flex items-center justify-center space-x-4 mt-4 pt-4 border-t border-gray-600">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/neil.bakery?igsh=MTU5OTh1dGd4cnI2eg=="
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
             >
-              <FaInstagram className="w-5 h-5" />
+              <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1CrJrfdCLF/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white hover:text-[#e98d1a] active:text-[#e98d1a] transition-all duration-300"
             >
-              <FaFacebookSquare className="w-5 h-5" />
+              <Facebook className="w-5 h-5" />
             </a>
             <a
               href="https://tiktok.com"

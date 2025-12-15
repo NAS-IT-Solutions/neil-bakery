@@ -15,7 +15,7 @@ export const COMPANY_INFO = {
   name: "Neil Bakery",
   tagline: 'Freshly baked goods made with love',
   description:
-    "Freshly baked goods made with love and the finest ingredients. Serving our community since 1978.",
+    "Freshly baked goods made with love and the finest ingredients. Serving our community since 1990.",
   email: 'neilbakery87@gmail.com',
   phone: '0771544293 | 0112657088',
   address: 'St.Annes Lane Katukurunda Moratuwa ',
@@ -25,7 +25,7 @@ export const COMPANY_INFO = {
 
 export const OUTLETS: Outlet[] = [
   {
-    name: 'Neli Bakery - Moratuwa',
+    name: 'Neil Bakery - Moratuwa',
     address: 'Moratuwa, Colombo',
     hours: 'Open 5.30 AM - 9.00 PM',
     phone: '+94 76 094 9867',
@@ -34,7 +34,7 @@ export const OUTLETS: Outlet[] = [
   },
   
   {
-    name: 'Neli Bakery - Koralawella',
+    name: 'Neil Bakery - Koralawella',
     address: 'Moratuwa, Colombo',
     hours: 'Open 5.30 AM - 9.00 PM',
     phone: '+94 76 101 9656',
@@ -43,7 +43,7 @@ export const OUTLETS: Outlet[] = [
   },
 
   {
-    name: 'Neli Bakery - Egoda Uyana',
+    name: 'Neil Bakery - Egoda Uyana',
     address: 'Moratuwa, Colombo', // Example address
     hours: 'Open 5.30 AM - 9.00 PM',
     phone: '+94 76 354 6745',

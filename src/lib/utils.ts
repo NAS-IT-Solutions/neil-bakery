@@ -15,12 +15,19 @@ export function formatPrice(price: number): string {
 }
 
 /**
- * Scroll to section smoothly
+ * Scroll to section smoothly with offset for navbar
  */
 export function scrollToSection(sectionId: string): void {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    const navbarHeight = 70; // Approximate navbar height
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navbarHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
 }
 
