@@ -1,5 +1,7 @@
 "use client"
 
+
+import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
@@ -27,10 +29,29 @@ export default function OurJourneyPage() {
         }
     ]
 
-    return (
-        <>
-            <Navbar />
-            <div className="min-h-screen bg-[#fbfbfc]">
+        return (
+                <>
+                        <Head>
+                                <title>Neil Bakery | Our Journey in Moratuwa, Egodauyana & Korelawella</title>
+                                <meta name="description" content="Discover the story of Neil Bakery, serving Moratuwa, Egodauyana & Korelawella with fresh cakes, breads, and pastries since 1990." />
+                                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+                                    \"@context\": \"https://schema.org\",
+                                    \"@type\": \"Bakery\",
+                                    \"name\": \"Neil Bakery\",
+                                    \"address\": {
+                                        \"@type\": \"PostalAddress\",
+                                        \"streetAddress\": \"St.Annes Lane Katukurunda\",
+                                        \"addressLocality\": \"Moratuwa\",
+                                        \"addressRegion\": \"Western Province\",
+                                        \"postalCode\": \"10400\",
+                                        \"addressCountry\": \"LK\"
+                                    },
+                                    \"telephone\": \"+94771544293\",
+                                    \"url\": \"https://neilbakery.lk\"
+                                }` }} />
+                        </Head>
+                        <Navbar />
+                        <div className="min-h-screen bg-[#fbfbfc]">
                 {/* Hero Header - Same as Products Page */}
                 <div className="relative h-[40vh] min-h-[400px] overflow-hidden pt-20">
                     {/* Background Image with Overlay */}
@@ -46,7 +67,7 @@ export default function OurJourneyPage() {
                         <div className="max-w-6xl mx-auto w-full text-center space-y-6">
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                                <span>🍞</span>
+                                <span>✨</span>
                                 <span>Fresh Daily Since 1990</span>
                             </div>
 
@@ -56,7 +77,7 @@ export default function OurJourneyPage() {
                                     Our Journey
                                 </h1>
                                 <p className="text-lg sm:text-xl text-white/90 font-light max-w-2xl mx-auto">
-                                    35 years of baking excellence and serving our community
+                                    35 years of baking excellence and serving our community in Moratuwa, Egodauyana & Korelawella
                                 </p>
                             </div>
                         </div>
