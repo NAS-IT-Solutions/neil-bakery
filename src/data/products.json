@@ -269,13 +269,13 @@
     {
       "name": "Macaroni Small",
       "description": "Small portion of macaroni",
-      "price": 20,
+      "price": 200,
       "image": "/assets/images/macaroni_small.jpg"
     },
     {
       "name": "Macaroni Large",
       "description": "Large portion of macaroni",
-      "price": 60,
+      "price": 600,
       "image": "/assets/images/macaroni_large.jpg"
     }
   ],
