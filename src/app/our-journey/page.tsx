@@ -94,7 +94,7 @@ export default function OurJourneyPage() {
     () => [
       {
         year: "1990",
-        title: "The Beginning of Neil Bakery",
+        title: "The Beginning",
         description:
           "Neil Bakery began its journey in 1990 as a small bakery in Egoda Uyana, Sri Lanka, founded with a passion for freshly baked bread and quality pastries. With fewer than five team members, we focused on serving our local community with care, consistency, and homemade taste. What started as a small business quickly became a trusted neighborhood bakery, built on strong relationships and a commitment to quality that set us apart from the very beginning.",
         // ✅ 4 images for 1st step
@@ -107,11 +107,12 @@ export default function OurJourneyPage() {
       },
       {
         year: "2005",
-        title: "Founder Image",
+        title: "Growing with You",
         description:
           "As our customers grew, so did Neil Bakery. Founded by Mr. Neil, the business expanded its product range to include delicious cakes, refreshing drinks, and a wider variety of baked goods. With growing demand, we proudly opened three main outlets in Koralawella and Moratuwa, Sri Lanka, reaching more families and celebrations every day. Guided by our brand promise “Crafting happiness in every bite” we continue to grow alongside our customers, turning everyday moments into sweet memories.",
-        
-        image: "/assets/images/our_journey/Father_photo.jpg",
+        // ✅ keep as single image
+        image:
+          "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070",
       },
       {
         year: "2025",
@@ -146,6 +147,7 @@ export default function OurJourneyPage() {
           <div className="relative h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto w-full text-center space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                <span>🍞</span>
                 <span>Fresh Daily Since 1990</span>
               </div>
 
