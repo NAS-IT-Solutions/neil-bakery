@@ -43,7 +43,7 @@ export default function HEYArenaPage() {
 
             {/* Description */}
             <p className="text-lg text-gray-700 leading-relaxed">
-              At Neil's Bakery, we believe that baking is an art form. For over 40 years, we've been serving our community with the finest baked goods, made fresh daily using traditional recipes and premium ingredients.
+              At Neil's Bakery, we believe that baking is an art form. For over 35 years, we've been serving our community with the finest baked goods, made fresh daily using traditional recipes and premium ingredients.
             </p>
 
             <p className="text-lg text-gray-700 leading-relaxed">

@@ -132,7 +132,7 @@ export default function ProductsClient({ products }: Props) {
                                 Our Menu
                             </h1>
                             <p className="text-lg sm:text-xl text-white/90 font-light max-w-2xl mx-auto">
-                                Handcrafted artisan baked goods made fresh daily
+                                Freshly baked breads, pastries, cakes, drinks, and sweets every day.
                             </p>
                         </div>
 
