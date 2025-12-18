@@ -1,8 +1,7 @@
 'use client';
 
-
+import type { Metadata } from 'next';
 import { useEffect } from 'react';
-import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/sections/Hero';
@@ -47,39 +46,18 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <Head>
-        <title>Neil Bakery | Fresh Cakes & Bread in Moratuwa</title>
-        <meta name="description" content="Neil Bakery offers fresh cakes, breads, and pastries in Moratuwa, Egodauyana & Korelawella. Order online today!" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
-          \"@context\": \"https://schema.org\",
-          \"@type\": \"Bakery\",
-          \"name\": \"Neil Bakery\",
-          \"address\": {
-            \"@type\": \"PostalAddress\",
-            \"streetAddress\": \"St.Annes Lane Katukurunda\",
-            \"addressLocality\": \"Moratuwa\",
-            \"addressRegion\": \"Western Province\",
-            \"postalCode\": \"10400\",
-            \"addressCountry\": \"LK\"
-          },
-          \"telephone\": \"+94771544293\",
-          \"url\": \"https://neilbakery.lk\"
-        }` }} />
-      </Head>
-      <div className="min-h-screen bg-white">
-        <Navbar />
-        <main>
-          <h1 className="sr-only">Fresh Bakery Products in Moratuwa</h1>
-          <Hero />
-          <About />
-          <Outlets />
-          <Products />
-          <Feedback />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <main>
+        <h1 className="sr-only">Neil Bakery - Fresh Bakery Products in Moratuwa, Egoda Uyana & Korelawella</h1>
+        <Hero />
+        <About />
+        <Outlets />
+        <Products />
+        <Feedback />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }

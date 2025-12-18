@@ -38,9 +38,9 @@ export default function Hero() {
           >
             <Image
               src={img}
-              alt="Hero Slide Image"
+              alt={`Neil Bakery - Fresh baked goods including breads, cakes and pastries - Slide ${index + 1}`}
               fill
-              priority
+              priority={index === 0}
               className="object-cover transition-transform duration-6000 ease-out"
             />
           </div>

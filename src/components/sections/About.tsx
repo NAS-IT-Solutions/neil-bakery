@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Star, MapPin, ChefHat, ChevronRight } from "lucide-react";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-export default function HEYArenaPage() {
+export default function About() {
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
