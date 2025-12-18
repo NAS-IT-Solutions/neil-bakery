@@ -147,6 +147,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
+            Neil Bakery | Moratuwa, Egodauyana, Korelawella | St.Annes Lane Katukurunda, Moratuwa, Sri Lanka<br />
             © {currentYear} {COMPANY_INFO.name}. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-gray-500">

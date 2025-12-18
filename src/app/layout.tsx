@@ -32,6 +32,41 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Neil Bakery | Crafting Happiness In Every Bite</title>
+        <meta name="description" content="Discover Neil Bakery's delicious products, find our outlets, or contact us. Crafting happiness in every bite!" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Neil Bakery",
+              "url": "https://neilbakery.lk",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://neilbakery.lk/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SiteNavigationElement",
+              "name": ["Products", "Outlets", "Contact Us"],
+              "url": [
+                "https://neilbakery.lk/products",
+                "https://neilbakery.lk/outlets",
+                "https://neilbakery.lk/contact"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
