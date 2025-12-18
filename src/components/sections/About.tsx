@@ -6,18 +6,17 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function HEYArenaPage() {
   const { elementRef, isVisible } = useScrollAnimation();
-  
+
   return (
-    <section 
+    <section
       ref={elementRef as any}
-      id="about" 
-      className={`py-12 sm:py-16 md:py-20 bg-[#fbfbfc] transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      id="about"
+      className={`py-12 sm:py-16 md:py-20 bg-[#fbfbfc] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
     >
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Navigation */}
         <nav className="mb-8">
           <button className="flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-full">
@@ -27,10 +26,10 @@ export default function HEYArenaPage() {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* LEFT CONTENT */}
           <div className="space-y-8">
-            
+
             {/* Heading */}
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
@@ -52,7 +51,7 @@ export default function HEYArenaPage() {
 
             {/* Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-              
+
               {/* Card 1 */}
               <div className="flex items-start gap-4">
                 <div className="shrink-0 w-12 h-12 bg-[#e98d1a] text-white rounded-full flex items-center justify-center">
@@ -85,12 +84,17 @@ export default function HEYArenaPage() {
             <div className="pt-6">
               <Link
                 href="/our-journey"
-                className="inline-flex items-center gap-2 px-8 py-4
-                           bg-linear-to-r from-[#e98d1a] to-[#d17a0f]
-                           text-white font-semibold rounded-full
-                           shadow-xl hover:shadow-2xl hover:scale-105
-                           active:shadow-2xl active:scale-105
-                           transition-all duration-300"
+                className="
+                  inline-flex items-center gap-2
+                  px-4 py-2
+                  border border-gray-600
+                  rounded-full
+                  font-bold text-gray-800
+                  transition-all duration-300
+                  hover:bg-[#e98d1a]
+                  hover:text-white
+                  hover:border-[#e98d1a]
+                "
               >
                 <span>Our Journey</span>
                 <ChevronRight className="w-5 h-5" />
