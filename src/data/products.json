@@ -2,13 +2,13 @@
   "bread": [
     {
       "name": "Bread Large",
-      "description": "Soft large loaf for daily use",
+      "description": "Soft large loaf of bread",
       "price": 130,
       "image": "/assets/images/bread_large.png"
     },
     {
       "name": "Bread Small",
-      "description": "Small loaf ideal for breakfast",
+      "description": "Small loaf of bread",
       "price": 100,
       "image": "/assets/images/bread_small.png"
     },
@@ -26,13 +26,13 @@
     },
     {
       "name": "Normal Slice",
-      "description": "Soft sliced bread for sandwiches",
+      "description": "Soft sliced loaf of bread",
       "price": 155,
       "image": "/assets/images/normal_slice.png"
     },
     {
       "name": "Roast Bread",
-      "description": "Crispy roasted bread for snacking",
+      "description": "Crispy roasted bread",
       "price": 40,
       "image": "/assets/images/roast_bread.png"
     }
@@ -40,13 +40,13 @@
   "pastries": [
     {
       "name": "Buns",
-      "description": "Soft bun for everyday snacking",
+      "description": "Soft bun for custom filling",
       "price": 60,
       "image": "/assets/images/buns.jpg"
     },
     {
       "name": "Fish Bun Small",
-      "description": "Small fish-filled bun snack",
+      "description": "Small fish filled bun",
       "price": 60,
       "image": "/assets/images/fish_bun_small.jpg"
     },
@@ -100,7 +100,7 @@
     },
     {
       "name": "Drumstick Bun",
-      "description": "Bun shaped like drumstick",
+      "description": "Bun stuffed with drumstick",
       "price": 100,
       "image": "/assets/images/drumstick_bun.jpg"
     },
@@ -141,32 +141,32 @@
       "image": "/assets/images/chicken_bun.jpg"
     },
     {
-      "name": "Fish Patties",
-      "description": "Crispy pastry filled with fish",
+      "name": "Fish Pattie",
+      "description": "Crispy patty filled with fish",
       "price": 90,
       "image": "/assets/images/fish_patties.jpg"
     },
     {
-      "name": "Chicken Patties",
-      "description": "Golden pastry with chicken filling",
+      "name": "Chicken Pattie",
+      "description": "Golden pattie with chicken filling",
       "price": 130,
       "image": "/assets/images/chicken_patties.jpg"
     },
     {
-      "name": "Veg Patties",
-      "description": "Vegetable-filled crispy patties",
+      "name": "Vegetable Pattie",
+      "description": "Vegetable filled crispy patties",
       "price": 90,
       "image": "/assets/images/veg_patties.jpg"
     },
     {
       "name": "Fish Cutlet",
-      "description": "Round deep-fried fish snack",
+      "description": "Crispy fish cutlet",
       "price": 60,
       "image": "/assets/images/fish_cutlet.jpg"
     },
     {
-      "name": "Veg Cutlet",
-      "description": "Crispy vegetable cutlet snack",
+      "name": "Vegetable Cutlet",
+      "description": "Crispy vegetable cutlet",
       "price": 60,
       "image": "/assets/images/veg_cutlet.jpg"
     },
@@ -189,7 +189,7 @@
       "image": "/assets/images/egg_sandwich.jpg"
     },
     {
-      "name": "Veg Sandwich",
+      "name": "Vegetable Sandwich",
       "description": "Fresh vegetable sandwich snack",
       "price": 70,
       "image": "/assets/images/veg_sandwich.jpg"
@@ -202,7 +202,7 @@
     },
     {
       "name": "Chicken Sandwich",
-      "description": "Soft sandwich with chicken mix",
+      "description": "Soft sandwich with chicken filling",
       "price": 130,
       "image": "/assets/images/chicken_sandwich.jpg"
     },
@@ -225,26 +225,26 @@
       "image": "/assets/images/chicken_pastry.jpg"
     },
     {
-      "name": "Veg Pastry",
+      "name": "Vegetable Pastry",
       "description": "Pastry filled with vegetables",
       "price": 90,
       "image": "/assets/images/veg_pastry.jpg"
     },
     {
       "name": "Half Pastry",
-      "description": "Half-sized snack pastry",
+      "description": "Half sized snack pastry",
       "price": 45,
       "image": "/assets/images/half_pastry.jpg"
     },
     {
       "name": "Fish Roll",
-      "description": "Deep-fried roll with fish",
+      "description": "Deep fried roll with fish",
       "price": 80,
       "image": "/assets/images/fish_roll.jpg"
     },
     {
       "name": "Egg Roll",
-      "description": "Roll filled with egg mixture",
+      "description": "Deep fried roll filled with an egg",
       "price": 100,
       "image": "/assets/images/egg_roll.jpg"
     },
@@ -255,8 +255,8 @@
       "image": "/assets/images/chicken_roll.jpg"
     },
     {
-      "name": "Veggie Roll",
-      "description": "Roll stuffed with vegetables",
+      "name": "Vegetable Roti",
+      "description": "Roti stuffed with vegetables",
       "price": 80,
       "image": "/assets/images/veggie_roll.jpg"
     },
@@ -305,48 +305,6 @@
       "image": "/assets/images/swissroll_large.jpg"
     },
     {
-      "name": "Doughnut",
-      "description": "Soft round doughnut treat",
-      "price": 120,
-      "image": "/assets/images/doughnut.jpg"
-    },
-    {
-      "name": "Éclair",
-      "description": "Cream-filled chocolate éclair",
-      "price": 120,
-      "image": "/assets/images/eclair.jpg"
-    },
-    {
-      "name": "Cupcake",
-      "description": "Soft cupcake with topping",
-      "price": 120,
-      "image": "/assets/images/cupcake.jpg"
-    },
-    {
-      "name": "Rum Ball",
-      "description": "Chocolate rum-flavoured ball",
-      "price": 80,
-      "image": "/assets/images/rum_ball.jpg"
-    },
-    {
-      "name": "Apple Cake",
-      "description": "Soft cake baked with apples",
-      "price": 80,
-      "image": "/assets/images/apple_cake.jpg"
-    },
-    {
-      "name": "Ada",
-      "description": "Traditional Sri Lankan sweet",
-      "price": 80,
-      "image": "/assets/images/ada.jpg"
-    },
-    {
-      "name": "Rock Cake",
-      "description": "Crunchy textured sweet cake",
-      "price": 80,
-      "image": "/assets/images/rock_cake.jpg"
-    },
-    {
       "name": "Butter Cake 1kg",
       "description": "One kilo soft butter cake",
       "price": 1200,
@@ -392,7 +350,7 @@
     },
     {
       "name": "Nestea",
-      "description": "Refreshing iced tea drink",
+      "description": "Refreshing hot tea",
       "price": 120,
       "image": "/assets/images/nestea.jpg"
     },
@@ -404,37 +362,37 @@
     },
     {
       "name": "Plain Tea",
-      "description": "Simple hot black tea",
+      "description": "Hot black tea",
       "price": 50,
       "image": "/assets/images/plain_tea.jpg"
     },
     {
       "name": "Drinks 100",
-      "description": "Bottled drink priced at 100",
+      "description": "Small soft drink bottle",
       "price": 100,
       "image": "/assets/images/drinks_100.jpg"
     },
     {
       "name": "Drinks 120",
-      "description": "Assorted drink medium size",
+      "description": "Small soft drink bottle",
       "price": 120,
       "image": "/assets/images/drinks_120.jpg"
     },
     {
       "name": "Drinks 200",
-      "description": "Soft drink priced at 200",
+      "description": "Medium soft drink bottle",
       "price": 200,
       "image": "/assets/images/drinks_200.jpg"
     },
     {
       "name": "Drinks 300",
-      "description": "Large bottle priced 300",
+      "description": "Large soft drink bottle",
       "price": 300,
       "image": "/assets/images/drinks_300.jpg"
     },
     {
       "name": "Drinks 400",
-      "description": "Extra large drink bottle",
+      "description": "Extra large soft drink bottle",
       "price": 400,
       "image": "/assets/images/drinks_400.jpg"
     },
@@ -452,7 +410,7 @@
     },
     {
       "name": "Daily",
-      "description": "Refreshing dairy-based drink",
+      "description": "Refreshing dairy based drink",
       "price": 130,
       "image": "/assets/images/daily.jpg"
     },
@@ -464,21 +422,21 @@
     },
     {
       "name": "Highland",
-      "description": "Highland brand milk drink",
+      "description": "Creamy milk from Highland ",
       "price": 220,
       "image": "/assets/images/highland.jpg"
-    },
-    {
-      "name": "Smak Large",
-      "description": "Large Smak fruit drink",
-      "price": 320,
-      "image": "/assets/images/smak_large.jpg"
     },
     {
       "name": "Smak Small",
       "description": "Small Smak drink pack",
       "price": 140,
       "image": "/assets/images/smak_small.jpg"
+    },
+    {
+      "name": "Smak Large",
+      "description": "Large Smak fruit drink",
+      "price": 320,
+      "image": "/assets/images/smak_large.jpg"
     },
     {
       "name": "Ambewela Milk",
@@ -523,24 +481,54 @@
       "image": "/assets/images/sun_crush.jpg"
     },
     {
-      "name": "E.H. Can",
-      "description": "Energy drink can",
+      "name": "Elephant House Can",
+      "description": "Canned soft drink can",
       "price": 150,
       "image": "/assets/images/eh_can.jpg"
     }
   ],
   "sweets": [
     {
-      "name": "Cake Piece Small",
-      "description": "Small slice of soft cake",
-      "price": 150,
-      "image": "/assets/images/cake_piece_small.jpg"
+      "name": "Doughnut",
+      "description": "Soft round doughnut with icing",
+      "price": 120,
+      "image": "/assets/images/doughnut.jpg"
     },
     {
-      "name": "Cake Piece Thick",
-      "description": "Thick slice of fresh cake",
-      "price": 170,
-      "image": "/assets/images/cake_piece_thick.jpg"
+      "name": "Éclair",
+      "description": "Cream filled chocolate éclair",
+      "price": 120,
+      "image": "/assets/images/eclair.jpg"
+    },
+    {
+      "name": "Cupcake",
+      "description": "Soft cupcake with topping",
+      "price": 120,
+      "image": "/assets/images/cupcake.jpg"
+    },
+    {
+      "name": "Rum Ball",
+      "description": "Chocolate rum flavoured ball",
+      "price": 80,
+      "image": "/assets/images/rum_ball.jpg"
+    },
+    {
+      "name": "Apple Cake",
+      "description": "Soft sweet cup cake",
+      "price": 80,
+      "image": "/assets/images/apple_cake.jpg"
+    },
+    {
+      "name": "Ada",
+      "description": "Traditional Sri Lankan sweet",
+      "price": 80,
+      "image": "/assets/images/ada.jpg"
+    },
+    {
+      "name": "Rock Cake",
+      "description": "Crunchy textured sweet cake",
+      "price": 80,
+      "image": "/assets/images/rock_cake.jpg"
     }
   ]
 }
