@@ -199,12 +199,15 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#e98d1a" />
         <meta name="color-scheme" content="light" />
-        
+
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="R0i4dpTGCUP13pQ2wc1osCPUuIW1fc8Gjyh-_3XIvbc" />
+
         {/* Favicon and Icons */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="manifest" href="/manifest.json" />
-        
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
