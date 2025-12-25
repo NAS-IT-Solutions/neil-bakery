@@ -13,6 +13,12 @@ export default function Products() {
 
   const handleProductClick = (categoryKey: string) => {
     router.push(`/products#${categoryKey}`);
+    // Scroll to top after navigation
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const products = [
