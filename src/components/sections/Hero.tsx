@@ -32,9 +32,8 @@ export default function Hero() {
         {images.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === current ? "opacity-100 scale-105" : "opacity-0 scale-100"
-            }`}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === current ? "opacity-100 scale-105" : "opacity-0 scale-100"
+              }`}
           >
             <Image
               src={img}
@@ -85,10 +84,11 @@ export default function Hero() {
           </a>
           <a
             href="#outlets"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/20 active:bg-white/20 transition-all duration-300"
+            className="inline-flex items-center justify-center text-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/20 active:bg-white/20 transition-all duration-300"
           >
             Find Us
           </a>
+
         </div>
 
         {/* Slide Indicators */}
@@ -97,11 +97,10 @@ export default function Hero() {
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`transition-all duration-300 rounded-full ${
-                index === current
+              className={`transition-all duration-300 rounded-full ${index === current
                   ? "w-8 h-2 bg-[#e98d1a]"
                   : "w-2 h-2 bg-white/50 hover:bg-white/80 active:bg-white/80"
-              }`}
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
