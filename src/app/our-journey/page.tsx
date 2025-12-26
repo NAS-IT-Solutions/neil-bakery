@@ -61,6 +61,7 @@ function JourneyImageCarousel({
       >
         ‹
       </button>
+
       <button
         type="button"
         onClick={goNext}
@@ -99,16 +100,16 @@ export default function OurJourneyPage() {
           'Neil Bakery began its journey in 1990 as a small bakery in Egoda Uyana, Sri Lanka, founded with a passion for freshly baked bread and quality pastries. With fewer than five team members, we focused on serving our local community with care, consistency, and homemade taste.',
           'What started as a small business quickly became a trusted neighborhood bakery, built on strong relationships and a commitment to quality that set us apart from the very beginning.',
         ],
-        images: ['assets/images/Neil_Old_One.jpeg', 'assets/images/Neil_Old_Two.jpeg'],
+        images: ['/assets/images/Neil_Old_One.jpeg', '/assets/images/Neil_Old_Two.jpeg'],
       },
       {
         year: '2005',
         title: 'Founder of Neil Bakery',
         description: [
-          'As our customers grew, so did Neil Bakery. Founded by Mr. Neil, the business expanded its product range to include delicious cakes, refreshing drinks, and a wider variety of baked goods.',
+          'As our loyal customers grew, Neil Bakery grew alongside them. Founded by Mr. Neil Peris, Neil Bakery evolved from a humble beginning into a trusted destination for freshly baked goods. Over time, the bakery expanded its product range to include delicious cakes, refreshing beverages, and a wide variety of high quality baked treats, all crafted with passion and premium ingredients.',
           'With growing demand, we proudly opened three main outlets in Koralawella and Moratuwa, Sri Lanka, reaching more families and celebrations every day. Guided by our brand promise “Crafting happiness in every bite” we continue to grow alongside our customers, turning everyday moments into sweet memories.',
         ],
-        image: 'assets/images/Father_photo.jpg',
+        image: '/assets/images/Father_photo.jpg',
       },
       {
         year: '2025',
@@ -117,7 +118,7 @@ export default function OurJourneyPage() {
           'Today, Neil Bakery is powered by a dedicated team of 30+ employees, producing over 1,000 bakery items daily while maintaining the quality our customers love. With 35+ years of experience, we are proud of the trust we’ve earned and the positive customer feedback that drives us forward.',
           'As we look to the future, our focus remains on innovation, consistency, and delivering exceptional bakery products that bring happiness today and for generations to come.',
         ],
-        images: ['assets/images/Neil_Moratuwa.jpeg', 'assets/images/Neil_EgodaUyana.jpeg'],
+        images: ['/assets/images/Neil_Moratuwa.jpeg', '/assets/images/Neil_EgodaUyana.jpeg'],
       },
     ],
     []
@@ -125,85 +126,85 @@ export default function OurJourneyPage() {
 
   // AboutPage Schema
   const aboutPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Our Journey - Neil Bakery",
-    "description": "Discover the journey of Neil Bakery, from our humble beginnings in 1990 to becoming a beloved bakery brand in Sri Lanka.",
-    "url": "https://neilbakery.lk/our-journey",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Neil Bakery",
-      "foundingDate": "1990",
-      "founder": {
-        "@type": "Person",
-        "name": "Mr. Neil"
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'Our Journey - Neil Bakery',
+    description:
+      'Discover the journey of Neil Bakery, from our humble beginnings in 1990 to becoming a beloved bakery brand in Sri Lanka.',
+    url: 'https://neilbakery.lk/our-journey',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Neil Bakery',
+      foundingDate: '1990',
+      founder: {
+        '@type': 'Person',
+        name: 'Mr. Neil',
       },
-      "description": "A trusted bakery brand in Sri Lanka since 1990, crafting happiness in every bite."
-    }
+      description: 'A trusted bakery brand in Sri Lanka since 1990, crafting happiness in every bite.',
+    },
   };
 
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://neilbakery.lk"
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://neilbakery.lk',
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Our Journey",
-        "item": "https://neilbakery.lk/our-journey"
-      }
-    ]
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Our Journey',
+        item: 'https://neilbakery.lk/our-journey',
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(aboutPageSchema)
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema)
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
       <Navbar />
+
       <div className="min-h-screen bg-[#fbfbfc]">
-        {/* Hero Header */}
+        {/* HERO (image shows as-is because overlay removed) */}
         <div className="relative h-[40vh] min-h-[400px] overflow-hidden pt-20">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: "url('/assets/images/neil_bakery_our_journey_banner.jpg')",
             }}
-          >
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
+          />
+          {/* If you ever want dim for readability, add overlay here:
+              <div className="absolute inset-0 bg-black/40" />
+          */}
+        </div>
 
-          <div className="relative h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto w-full text-center space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                <span>✨</span>
+        {/* Hero Content */}
+        <div className="relative -mt-[40vh] min-h-[400px] pt-20 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto w-full text-center space-y-6">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+              <span>✨</span>
+              <span>Fresh Daily Since 1990</span>
+            </div>
 
-                <span>Fresh Daily Since 1990</span>
-              </div>
-
-              <div className="space-y-2">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-none">
-                  Our Journey
-                </h1>
-                <p className="text-lg sm:text-xl text-white/90 font-light max-w-2xl mx-auto">
-                  35 years of baking excellence and serving our community
-                </p>
-              </div>
+            <div className="space-y-2">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-none">
+                Our Journey
+              </h1>
+              <p className="text-lg sm:text-xl text-white/90 font-light max-w-2xl mx-auto">
+                35 years of baking excellence and serving our community
+              </p>
             </div>
           </div>
         </div>
@@ -220,7 +221,7 @@ export default function OurJourneyPage() {
               >
                 {/* Image */}
                 <div className="w-full lg:w-1/2">
-                  {/* ✅ Carousel only for 1st & 3rd (they have images array) */}
+                  {/* Carousel only for steps with images array */}
                   {step.images ? (
                     <JourneyImageCarousel images={step.images} alt={step.title} />
                   ) : (
@@ -244,19 +245,15 @@ export default function OurJourneyPage() {
                     </h2>
                     <div className="h-1 w-20 bg-[#e98d1a] rounded-full" />
                   </div>
+
                   {Array.isArray(step.description) ? (
                     step.description.map((para: string, idx: number) => (
-                      <p
-                        key={idx}
-                        className="text-lg sm:text-lg text-gray-600 leading-relaxed mb-4"
-                      >
+                      <p key={idx} className="text-lg sm:text-lg text-gray-600 leading-relaxed mb-4">
                         {para}
                       </p>
                     ))
                   ) : (
-                    <p className="text-lg sm:text-lg leading-relaxed text-[justify]">
-                      {step.description}
-                    </p>
+                    <p className="text-lg sm:text-lg leading-relaxed text-[justify]">{step.description}</p>
                   )}
                 </div>
               </div>
@@ -283,8 +280,9 @@ export default function OurJourneyPage() {
             </div>
           </div>
         </div>
+
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
