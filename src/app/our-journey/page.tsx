@@ -106,8 +106,8 @@ export default function OurJourneyPage() {
         year: '2005',
         title: 'Founder of Neil Bakery',
         description: [
-          'As our loyal customers grew, Neil Bakery grew alongside them. Founded by Mr. Neil Peris, Neil Bakery evolved from a humble beginning into a trusted destination for freshly baked goods. Over time, the bakery expanded its product range to include delicious cakes, refreshing beverages, and a wide variety of high quality baked treats, all crafted with passion and premium ingredients.',
-          'With growing demand, we proudly opened three main outlets in Koralawella and Moratuwa, Sri Lanka, reaching more families and celebrations every day. Guided by our brand promise “Crafting happiness in every bite” we continue to grow alongside our customers, turning everyday moments into sweet memories.',
+          'As our loyal customers grew, Neil Bakery grew alongside them. Founded by Mr. Neil Peiris, Neil Bakery evolved from a humble beginning into a trusted destination for freshly baked goods. Over time, the bakery expanded its product range to include delicious cakes, refreshing beverages, and a wide variety of high quality baked treats, all crafted with passion and premium ingredients.',
+          'With growing demand, we proudly opened three main outlets in Koralawella, Moratuwa and Egoda Uyana, reaching more families and celebrations every day. Guided by our brand promise “Crafting happiness in every bite” we continue to grow alongside our customers, turning everyday moments into sweet memories.',
         ],
         image: '/assets/images/Father_photo.jpg',
       },
